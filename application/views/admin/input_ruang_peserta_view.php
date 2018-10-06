@@ -6,10 +6,10 @@
         </div>
         <div class="panel-body">
             <form action="">
-                <input class="form-control input-sm" placeholder="RDTO1" type="text" disabled>
-                <input class="form-control input-sm" placeholder="Nomor Peserta" type="text">
-                <input class="form-control input-sm" placeholder="Nama Peserta" type="text">
-                <input class="form-control input-sm" placeholder="Asal Sekolah" type="text">
+                <input class="form-control input-md" placeholder="RDTO1" type="text" disabled>
+                <input class="form-control input-md" placeholder="Nomor Peserta" type="text">
+                <input class="form-control input-md" placeholder="Nama Peserta" type="text">
+                <input class="form-control input-md" placeholder="Asal Sekolah" type="text">
             </form>
             <br>
             <a class="btn btn-primary">Tambah Input</a>

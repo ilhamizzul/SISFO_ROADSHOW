@@ -41,7 +41,7 @@
                                     <td></td>
                                     <td>tidak_hadir</td>
                                     <td>
-                                        <a class="btn btn-danger">Hapus</a>
+                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
                                         <a class="btn btn-default">Absen</a>
                                     </td>
                                 </tr>
@@ -51,3 +51,28 @@
                         </div>
                     </div>
             </div>
+
+<!-- modal HAPUS -->
+<div id="modalHapus" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body">
+                <center>
+                <h4>
+                    Apakah Anda Yakin?
+                </h4>
+                </center>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="btn btn-danger">YA</a>
+                <a href="" class="btn btn-default" data-dismiss="modal">TIDAK</a>
+            </div>
+        </div>
+    </div>
+</div>

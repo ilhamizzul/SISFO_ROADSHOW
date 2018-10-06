@@ -6,7 +6,7 @@
                             <h3 class="panel-title">Data Peserta di Ruangan RDTO1</h3>
                             <br>
                             <a class="btn btn-default" disabled="">XII IPS 2</a>
-                            <a class="btn btn-default" disabled="">Tambah Peserta</a>
+                            <a class="btn btn-default" >Tambah Peserta</a>
                         </div>
 
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
@@ -39,7 +39,7 @@
                             <h3 class="panel-title">Data Peserta di Ruangan RDTO1</h3>
                             <br>
                             <a class="btn btn-default" disabled="">XII IPS 2</a>
-                            <a class="btn btn-default" disabled="">Tambah Peserta</a>
+                            <a class="btn btn-default">Tambah Peserta</a>
                         </div>
 
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
@@ -72,7 +72,7 @@
                             <h3 class="panel-title">Data Peserta di Ruangan RDTO1</h3>
                             <br>
                             <a class="btn btn-default" disabled="">XII IPS 2</a>
-                            <a class="btn btn-default" disabled="">Tambah Peserta</a>
+                            <a class="btn btn-default">Tambah Peserta</a>
                         </div>
 
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->

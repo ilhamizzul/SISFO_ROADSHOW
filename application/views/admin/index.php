@@ -20,6 +20,10 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>assets/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/DataTables/Buttons-1.5.4/css/buttons.bootstrap.min.css"/>
+
+    <!-- DATA TABLE BLM BS BEKERJA -->
 </head>
 
 <body>
@@ -28,7 +32,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="brand">
-            <a href="index.html"><b>RoadShow2018</b></a>
+            <a href=""><b>RoadShow2018</b></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -94,7 +98,23 @@
 <script src="<?php echo base_url(); ?>assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/scripts/klorofil-common.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/DataTables/datatables.min.js"></script>
 <?php $this->load->view($JSON); ?>
+
+<!-- DATA TABLE BLM BS BEKERJTA -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'print'
+        ]
+    } );
+} );
+
+</script>
+
 </body>
 
 </html>

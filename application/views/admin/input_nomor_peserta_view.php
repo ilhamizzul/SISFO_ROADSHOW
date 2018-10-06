@@ -6,7 +6,7 @@
                         </div>
                         <div class="panel-body">
                             <form action="">
-                                <input class="form-control input-sm" placeholder="Nomor Peserta" type="text">
+                                <input class="form-control input-md" placeholder="Nomor Peserta" type="text">
                             </form>
                             <br>
                             <a class="btn btn-primary">Tambah Input</a>
