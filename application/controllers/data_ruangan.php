@@ -12,6 +12,7 @@ class Data_ruangan extends CI_Controller {
 	public function index()
 	{
 		$data['main_view'] = 'admin/data_ruangan_view';
+		$data['JSON'] = 'JSON/data_ruangan_JSON';
 		$this->load->view('admin/index', $data);			
 	}
 

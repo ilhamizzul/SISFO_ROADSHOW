@@ -12,6 +12,7 @@ class Data_peserta extends CI_Controller {
 	public function index()
 	{
 		$data['main_view'] = 'admin/data_peserta_view';
+		$data['JSON'] = 'JSON/data_peserta_JSON';
 		$this->load->view('admin/index', $data);	
 	}
 

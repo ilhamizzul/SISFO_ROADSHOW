@@ -7,12 +7,21 @@ class Data_nomor_peserta extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('data_nomor_peserta_model');
+		$this->load->model('input_nomor_peserta_model');
 	}
 
 	public function index()
 	{
 		$data['main_view'] = 'admin/data_nomor_peserta_view';
+		$data['JSON'] = 'JSON/data_nomor_peserta_JSON';
 		$this->load->view('admin/index', $data);		
+	}
+
+	public function input_nomor_peserta()
+	{
+		$data['main_view'] = 'admin/input_nomor_peserta_view';
+		$data['JSON'] = 'JSON/input_nomor_peserta_JSON';
+		$this->load->view('admin/index', $data);
 	}
 
 }
