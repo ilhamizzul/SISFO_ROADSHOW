@@ -11,8 +11,8 @@
 
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
 
-                        <div class="panel-body">
-                            <table class="table table-hover">
+                        <div class="panel-body table-responsive">
+                            <table class="display table table-hover dataTable" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>No</th>
@@ -44,8 +44,8 @@
 
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
 
-                        <div class="panel-body">
-                            <table class="table table-hover">
+                        <div class="panel-body table-responsive">
+                            <table class="display table table-hover dataTable" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>No</th>
@@ -77,8 +77,8 @@
 
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
 
-                        <div class="panel-body">
-                            <table class="table table-hover">
+                        <div class="panel-body table-responsive">
+                            <table class="display table table-hover dataTable" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>No</th>

@@ -8,8 +8,8 @@
         </div>
 
         <!--TOLONG NANTI TAMBAHKAN PRINT-->
-        <div class="panel-body">
-            <table class="table table-hover display" id="example">
+        <div class="panel-body table-responsive">
+            <table class="display table table-hover dataTable js-exportable" id="dataTable">
                 <thead>
                 <tr>
                     <th>No</th>
