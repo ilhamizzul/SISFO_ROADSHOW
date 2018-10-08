@@ -23,8 +23,8 @@
         <div class="panel-heading">
             <h3 class="panel-title">Daftar Peserta di Ruang RDTO1</h3>
         </div>
-        <div class="panel-body">
-            <table class="table table-hover">
+        <div class="panel-body table-responsive">
+            <table class="display table table-hover dataTable js-scroll" id="dataTable">
                 <thead>
                 <tr>
                     <th>NO</th>

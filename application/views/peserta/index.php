@@ -39,38 +39,22 @@
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
-                <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+               <!--  <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button> -->
             </div>
             <div id="navbar-menu">
-                <ul class="nav navbar-nav navbar-right">
+                <!-- <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Option</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo base_url() ?>login"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
                         </ul>
                     </li>
-
-                </ul>
+                </ul> -->
             </div>
         </div>
     </nav>
     <!-- END NAVBAR -->
-    <!-- LEFT SIDEBAR -->
-    <div id="sidebar-nav" class="sidebar">
-        <div class="sidebar-scroll">
-            <nav>
-                <ul class="nav">
-                    <li><a href="<?php echo base_url() ?>dashboard" class="<?php if($this->uri->segment(1)=="dashboard"){echo "active";}?>"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-                    <li><a href="<?php echo base_url() ?>data_peserta" class="<?php if($this->uri->segment(1)=="data_peserta"){echo "active";}?>"><i class="lnr lnr-users"></i> <span>Data Peserta</span></a></li>
-                    <li><a href="<?php echo base_url() ?>data_ruangan" class="<?php if($this->uri->segment(1)=="data_ruangan"){echo "active";}?>"><i class="lnr lnr-database"></i> <span>Data Ruangan</span></a></li>
-                    <li><a href="<?php echo base_url() ?>data_ruangan_peserta" class="<?php if($this->uri->segment(1)=="data_ruangan_peserta"){echo "active";}?>"><i class="lnr lnr-apartment"></i> <span>Data Ruangan Peserta</span></a></li>
-                    <li><a href="<?php echo base_url() ?>data_nomor_peserta" class="<?php if($this->uri->segment(1)=="data_nomor_peserta"){echo "active";}?>"><i class="lnr lnr-list"></i> <span>Data Nomor Peserta</span></a></li>
-                    <li><a href="<?php echo base_url() ?>data_admin" class="<?php if($this->uri->segment(1)=="data_admin"){echo "active";}?>"><i class="lnr lnr-user"></i> <span>Data Admin</span></a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <!-- END LEFT SIDEBAR -->
+
     <!-- MAIN -->
     <div class="main">
         <!-- MAIN CONTENT -->

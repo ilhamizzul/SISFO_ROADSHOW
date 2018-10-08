@@ -12,7 +12,7 @@
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
 
                         <div class="panel-body table-responsive">
-                            <table class="display table table-hover dataTable" id="dataTable">
+                            <table class="display table table-hover dataTable js-scroll" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>No</th>
@@ -45,7 +45,7 @@
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
 
                         <div class="panel-body table-responsive">
-                            <table class="display table table-hover dataTable" id="dataTable">
+                            <table class="display table table-hover dataTable js-scroll" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>No</th>
@@ -78,7 +78,7 @@
                         <!--TOLONG NANTI TAMBAHKAN PRINT-->
 
                         <div class="panel-body table-responsive">
-                            <table class="display table table-hover dataTable" id="dataTable">
+                            <table class="display table table-hover dataTable js-scroll" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>No</th>

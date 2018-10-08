@@ -11,4 +11,10 @@ $(function () {
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     });
+
+    $('.js-scroll').DataTable({
+            "scrollY": "225px",
+            "scrollCollapse": true,
+            "paging": false
+    });
 });
