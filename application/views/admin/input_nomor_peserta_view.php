@@ -19,8 +19,9 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">Daftar Nomor Peserta</h3>
                         </div>
-                        <div class="panel-body table-responsive">
-                            <table class="display table table-hover dataTable js-scroll" id="dataTable">
+                        <div class="panel-body">
+                            <div class="table-responsive table-wrapper-scroll-y">
+                                <table class=" display table table-hover" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th>NO</th>
@@ -32,9 +33,10 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
-
                                 </tbody>
                             </table>
+                            </div>
+                            
                             <div class="col-md-12">
                                 <a class="btn btn-block">TAMBAH KE DATABASE</a>
                             </div>

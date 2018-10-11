@@ -3,7 +3,7 @@
     <!-- TABLE HOVER -->
     <div class="panel">
         <div class="panel-heading">
-            <h3 class="panel-title">Data Nomor Peserta</h3>
+            <h3 class="panel-title">Data Nomor Peserta</h3><br>
             <a href="<?php base_url();?>Data_nomor_peserta/input_nomor_peserta" class="btn btn-default">Tambah Nomor Peserta</a>
         </div>
 
