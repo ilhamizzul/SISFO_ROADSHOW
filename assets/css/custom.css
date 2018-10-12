@@ -14,6 +14,37 @@
     outline: none;
     float: left;
 }
+
 .dataTables_filter{
 	text-align: right;
+
+}
+
+.table-wrapper-scroll-y {
+  display: block;
+  max-height: 200px;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.modal-content{
+  border: none;
+  background-color: #5E6680; 
+  color: white;
+}
+.modal-header{
+  border: none;
+}
+.modal-footer{
+  border: none;
+}
+
+.panel-modal{
+  background-color:#303441 ;
+  box-shadow:0px 7px 25px #303441;
+  color: white;
+}
+
+.form-tambah{
+  color: white;
 }
