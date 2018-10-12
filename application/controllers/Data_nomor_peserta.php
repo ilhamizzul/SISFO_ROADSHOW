@@ -27,8 +27,17 @@ class Data_nomor_peserta extends CI_Controller {
 
 	public function save()
 	{
-		$this->output->set_content_type('application/json');
-		echo json_encode(array('check' => 'check'));
+		$datatable = $this->input->post('data_table');
+		for ($i=0; $i<count($datatable); $i++) {
+			$data[] = array(
+				'nomor_peserta'	=> $datatable[$i]['nomor_peserta'],
+				'status'	=> $datatable[$i]['status']
+			);
+			$this->Input_nomor_peserta_model->add_no_peserta($data[$i]);
+		}
+		// $this->session->set_flashdata('success', 'Sukses COIIII');
+		// redirect('Data_nomor_peserta');
+
 	}
 
 }

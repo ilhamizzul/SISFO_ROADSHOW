@@ -33,18 +33,14 @@
 				}
 
 			});
-
 			// function xxxx() {
-				var data = {'table_data' : table_data};
-
 				$.ajax({
-					data: data,
+					data: {'data_table' : table_data},
 					url: '<?php echo base_url(); ?>Data_nomor_peserta/save',
 					type: 'POST',
-					dataType: 'json',
-					crossOrigin: false,
 					success : function(result) {
-						console.log(result.check);
+						location.href = '<?php echo base_url() ?>Data_nomor_peserta';
+						alert('Insert berhasil');
 					}
 				});
 				
