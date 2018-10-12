@@ -20,15 +20,23 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>111111</td>
-                    <td>nonaktif</td>
-                    <td>
-                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
-                        <a class="btn btn-default">Aktifasi</a>
-                    </td>
-                </tr>
+                    <?php 
+                        $no = 1;
+                        foreach ($data_nomor_peserta as $data) {
+                            echo '
+                                <tr>
+                                    <td>'.$no++.'</td>
+                                    <td>'.$data->nomor_peserta.'</td>
+                                    <td>'.$data->status.'</td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
+                                        <a class="btn btn-default">Aktifasi</a>
+                                    </td>
+                                </tr>                
+                            ';
+                        }
+                    ?>
+                
 
                 </tbody>
             </table>

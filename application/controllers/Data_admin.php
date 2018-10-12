@@ -6,13 +6,14 @@ class Data_admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('data_admin_model');
+		$this->load->model('Data_admin_model');
 	}
 
 	public function index()
 	{
 		$data['main_view'] = 'admin/data_admin_view';
 		$data['JSON'] = 'JSON/data_admin_JSON';
+		$data['data_admin'] = $this->Data_admin_model->get_data_admin();
 		$this->load->view('admin/index', $data);
 	}
 

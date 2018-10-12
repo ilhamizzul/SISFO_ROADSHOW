@@ -25,16 +25,22 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>adminsmasa</td>
-                    <td>adminsmasa</td>
-                    <td>SMAN 1 Probolinggo</td>
-                    <td>
-                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
-                    </td>
-                </tr>
-
+                    <?php 
+                        $no = 1;
+                        foreach ($data_admin as $data) {
+                            echo '
+                                <tr>
+                                    <td>'.$no++.'</td>
+                                    <td>'.$data->username.'</td>
+                                    <td>'.$data->password.'</td>
+                                    <td>'.$data->sekolah.'</td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
+                                    </td>
+                                </tr>
+                            ';
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>

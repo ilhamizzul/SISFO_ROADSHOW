@@ -24,15 +24,23 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>RDTO-1</td>
-                    <td>XII IPS 4</td>
-                    <td>
-                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
-                        <a class="btn btn-default">Edit Letak Ruangan</a>
-                    </td>
-                </tr>
+                    <?php 
+                        $no = 1;
+                        foreach ($data_ruangan as $data) {
+                            echo '
+                                <tr>
+                                    <td>'.$no++.'</td>
+                                    <td>'.$data->nama_ruang.'</td>
+                                    <td>'.$data->letak_ruang.'</td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
+                                        <a class="btn btn-default">Edit Letak Ruangan</a>
+                                    </td>
+                                </tr>
+                            ';
+                        }
+                    ?>
+                                
 
                 </tbody>
             </table>
