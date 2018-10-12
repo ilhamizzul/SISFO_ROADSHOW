@@ -29,9 +29,9 @@ class Data_ruangan extends CI_Controller {
 		
 	}
 
-	public function get_ruang_by_id($id_gambar)
+	public function get_ruang_by_id($id_ruang)
 	{
-		$data_ruangan_by_id = $this->Data_ruangan_model->get_data_ruangan_by_id($id_gambar);
+		$data_ruangan_by_id = $this->Data_ruangan_model->get_data_ruangan_by_id($id_ruang);
 
 		echo json_encode($data_ruangan_by_id);
 	}

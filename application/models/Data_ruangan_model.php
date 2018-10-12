@@ -30,13 +30,13 @@ class Data_ruangan_model extends CI_Model {
 	public function get_data_ruangan_by_id($id_ruang)
 	{
 		return $this->db->where('id_ruang', $id_ruang)
-						->get()
+						->get('tb_ruang')
 						->row();
 	}
 
 	public function delete_data_ruangan($id)
 	{
-		return $this->db->where('id_ruang', $data)->delete('tb_ruang');
+		return $this->db->where('id_ruang', $id)->delete('tb_ruang');
 
 		if ($this->db->affected_rows() > 0) {
 			return TRUE;
