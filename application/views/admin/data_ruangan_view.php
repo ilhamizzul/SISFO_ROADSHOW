@@ -7,11 +7,6 @@
             <a data-toggle="modal" data-target="#modalTambah"  class="btn btn-default">Tambah Ruangan</a>
         </div>
 
-        <!--TOLONG NANTI TAMBAHKAN PRINT-->
-
-
-
-
         <div class="panel-body table-responsive">
             <table class="display table table-hover dataTable js-exportable" id="dataTable">
                 <thead>
@@ -33,7 +28,7 @@
                                     <td>'.$data->nama_ruang.'</td>
                                     <td>'.$data->letak_ruang.'</td>
                                     <td>
-                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
+                                        <button type="button" data-toggle="modal" data-target="#modalHapus" onclick="delete_ruang('.$data->id_ruang.')" class="btn btn-danger">Hapus</button>
                                         <a class="btn btn-default">Edit Letak Ruangan</a>
                                     </td>
                                 </tr>
@@ -67,7 +62,7 @@
                 </center>
             </div>
             <div class="modal-footer">
-                <a href="" class="btn btn-danger">YA</a>
+                <a href="" id="delete_data_ruangan" class="btn btn-danger">YA</a>
                 <a href="" class="btn btn-default" data-dismiss="modal">TIDAK</a>
             </div>
         </div>
@@ -86,25 +81,26 @@
             </div>
             <div class="modal-body panel-body">
                 <center>
-                <div class="panel panel-modal">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Tambah Ruangan</h3>
+                    <div class="panel panel-modal">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Tambah Ruangan</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-tambah" method="post" action="<?php echo base_url() ?>Data_ruangan/tambah_ruangan" >
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="nama_ruang" placeholder="Nama Ruangan">        
                                 </div>
-                                <div class="panel-body">
-                                    <form class="form-tambah">
-                                    <input type="text" class="form-control" placeholder="Nama Ruangan">
-                                    <br>
-                                    <input type="text" class="form-control" placeholder="Letak Ruangan">
-                                    <br>    
-                                    </form>
-                                    
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="letak_ruang" placeholder="Letak Ruangan">
                                 </div>
-                </div>
+                            </form>
+                        </div>
+                    </div>
                 </center>
             </div>
             <div class="modal-footer">
-                <a href="" class="btn btn-danger">Cancel</a>
-                <a href="" class="btn btn-default" data-dismiss="modal">TAMBAH</a>
+                <a href="" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+                <input type="button" class="btn btn-default" value="TAMBAH" id="submit_data_ruangan" >
             </div>
         </div>
     </div>

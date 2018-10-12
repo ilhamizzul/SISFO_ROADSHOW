@@ -4,11 +4,10 @@
             <h3 class="panel-title">Input Nomor Peserta</h3>
         </div>
         <div class="panel-body">
-            <form action="">
-                <input class="form-control input-md" placeholder="Nomor Peserta" type="text">
-            </form>
+            <input class="form-control input-md" id="nomor_peserta" placeholder="Nomor Peserta" type="text">
             <br>
-            <a class="btn btn-primary">Tambah Input</a>
+            <!-- <a class="btn btn-primary">Tambah Input</a> -->
+            <input type="button" class="btn btn-md btn-primary" value="Tambah Input" id="add_data">
         </div>
     </div>
 </div>
@@ -21,7 +20,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive table-wrapper-scroll-y">
-                                <table class=" display table table-hover" id="dataTable">
+                                <table class=" display table table-hover" id="table_data">
                                 <thead>
                                 <tr>
                                     <th>NO</th>
@@ -29,10 +28,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                                 </tbody>
                             </table>
                             </div>
