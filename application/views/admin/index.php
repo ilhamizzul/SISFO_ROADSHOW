@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css">
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom-admin.css">
 
 
     <!-- DATA TABLE BLM BS BEKERJA -->
