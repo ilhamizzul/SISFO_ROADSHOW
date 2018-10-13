@@ -133,7 +133,6 @@
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" name="ruang_ujian">
-                                        <option><-- Ruang TRY OUT --></option>
                                         <?php 
                                             foreach ($data_ruangan as $data) {
                                                 echo '
