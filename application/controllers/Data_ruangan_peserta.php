@@ -12,16 +12,28 @@ class Data_ruangan_peserta extends CI_Controller {
 
 	public function index()
 	{
-		$data['main_view'] = 'admin/data_ruangan_peserta_view';
-		$data['JSON'] = 'JSON/data_ruangan_peserta_JSON';
-		$this->load->view('admin/index', $data);
+		if ($this->session->userdata('logged_in') == TRUE) {
+			$data['main_view'] = 'admin/data_ruangan_peserta_view';
+			$data['JSON'] = 'JSON/data_ruangan_peserta_JSON';
+			$this->load->view('admin/index', $data);
+		} else {
+			redirect('Login');
+		}
+		
+			
 	}
 
 	public function input_ruangan_peserta()
 	{
-		$data['main_view'] = 'admin/input_ruangan_peserta_view';
-		$data['JSON'] = 'JSON/input_ruangan_peserta_JSON';
-		$this->load->view('admin/index', $data);
+		if ($this->session->userdata('logged_in') == TRUE) {
+			$data['main_view'] = 'admin/input_ruang_peserta_view';
+			$data['JSON'] = 'JSON/input_ruangan_peserta_JSON';
+			$this->load->view('admin/index', $data);
+		} else {
+			redirect('Login');
+		}
+		
+			
 	}
 
 }

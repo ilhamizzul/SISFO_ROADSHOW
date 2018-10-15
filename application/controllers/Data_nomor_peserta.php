@@ -12,17 +12,36 @@ class Data_nomor_peserta extends CI_Controller {
 
 	public function index()
 	{
-		$data['main_view'] = 'admin/data_nomor_peserta_view';
-		$data['JSON'] = 'JSON/data_nomor_peserta_JSON';
-		$data['data_nomor_peserta'] = $this->Data_nomor_peserta_model->get_nomor_peserta();
-		$this->load->view('admin/index', $data);		
+		if ($this->session->userdata('logged_in') == TRUE) {
+			$data['main_view'] = 'admin/data_nomor_peserta_view';
+			$data['JSON'] = 'JSON/data_nomor_peserta_JSON';
+			$data['data_nomor_peserta_active'] = $this->Data_nomor_peserta_model->get_nomor_peserta();
+			$data['data_nomor_peserta_non_active'] = $this->Data_nomor_peserta_model->get_nomor_peserta_non_active();
+			$this->load->view('admin/index', $data);		
+		} else {
+			redirect('Login');
+		}
+			
+	}
+
+	public function get_nomor_peserta_by_id($id_nmr_peserta)
+	{
+		$nmr_peserta_by_id = $this->Data_nomor_peserta_model->get_nomor_peserta_by_id($id_nmr_peserta);
+
+		echo json_encode($nmr_peserta_by_id);
 	}
 
 	public function input_nomor_peserta()
 	{
-		$data['main_view'] = 'admin/input_nomor_peserta_view';
-		$data['JSON'] = 'JSON/input_nomor_peserta_JSON';
-		$this->load->view('admin/index', $data);
+		if ($this->session->userdata('logged_in') == TRUE) {
+			$data['main_view'] = 'admin/input_nomor_peserta_view';
+			$data['JSON'] = 'JSON/input_nomor_peserta_JSON';
+			$this->load->view('admin/index', $data);
+		} else {
+			redirect('Login');
+		}
+		
+		
 	}
 
 	public function save()
@@ -42,6 +61,22 @@ class Data_nomor_peserta extends CI_Controller {
 	{
 		$data = $this->Input_nomor_peserta_model->check_nomor_peserta($this->input->post('nomor_peserta'));
 		echo json_encode(array('c'=>count($data)));
+	}
+
+	public function delete_nmr_peserta($id_nmr_peserta)
+	{
+		if ($this->session->userdata('logged_in') == TRUE) {
+			if ($this->Data_nomor_peserta_model->delete_nmr_peserta($id_nmr_peserta) == TRUE) {
+				$this->session->set_flashdata('success', 'Nomor Peserta Berhasil Dihapus');
+				redirect('Data_nomor_peserta');
+			} else {
+				$this->session->set_flashdata('failed', 'Nomor Peserta Gagal Dihapus');
+				redirect('Data_nomor_peserta');
+			}
+		} else {
+			redirect('Login');
+		}
+		
 	}
 
 }

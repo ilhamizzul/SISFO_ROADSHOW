@@ -18,7 +18,7 @@
 									<div class="metric">
 										<span class="icon"><i class="fa fa-user"></i></span>
 										<p>
-											<span class="number">243</span>
+											<span class="number"><?php echo $count_peserta; ?></span>
 											<span class="title">Peserta</span>
 										</p>
 									</div>
@@ -27,7 +27,7 @@
 									<div class="metric">
 										<span class="icon"><i class="fa fa-eye"></i></span>
 										<p>
-											<span class="number">193</span>
+											<span class="number"><?php echo $count_peserta_hadir ?></span>
 											<span class="title">Hadir</span>
 										</p>
 									</div>
@@ -36,7 +36,7 @@
 									<div class="metric">
 										<span class="icon"><i class="fa fa-eye-slash"></i></span>
 										<p>
-											<span class="number">50</span>
+											<span class="number"><?php echo $count_peserta_tidak_hadir ?></span>
 											<span class="title">Tidak Hadir</span>
 										</p>
 									</div>

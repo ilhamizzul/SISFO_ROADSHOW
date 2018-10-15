@@ -5,6 +5,8 @@
 			$('.form-tambah').submit();
 		});
 
+		document.title = 'Data Ruangan | RoadShow2k18';
+
 	});
 
 	

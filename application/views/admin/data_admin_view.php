@@ -6,19 +6,14 @@
             <h3 class="panel-title">Data Admin</h3><br>
             <a data-toggle="modal" data-target="#modalTambah" class="btn btn-default">Tambah Admin</a>
         </div>
-
-        <!--TOLONG NANTI TAMBAHKAN PRINT-->
-
-
-
-
+        
         <div class="panel-body table-responsive">
             <table class="display table table-hover dataTable js-exportable" id="dataTable">
                 <thead>
                 <tr>
                     <th>No</th>
                     <th>Username</th>
-                    <th>Passoword</th>
+                    <th>Password</th>
                     <th>Sekolah</th>
                     <th>Opsi</th>
                 </tr>
@@ -35,7 +30,7 @@
                                     <td>'.$data->password.'</td>
                                     <td>'.$data->sekolah.'</td>
                                     <td>
-                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
+                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger" onclick="delete_admin('.$data->id_admin.')">Hapus</a>
                                     </td>
                                 </tr>
                             ';
@@ -60,12 +55,12 @@
             <div class="modal-body panel-body">
                 <center>
                 <h4>
-                    Apakah Anda Yakin?
+                    Apakah Anda Yakin Menghapus Admin Ini?
                 </h4>
                 </center>
             </div>
             <div class="modal-footer">
-                <a href="" class="btn btn-danger">YA</a>
+                <a href="" class="btn btn-danger" id="delete_data_admin">YA</a>
                 <a href="" class="btn btn-default" data-dismiss="modal">TIDAK</a>
             </div>
         </div>
@@ -85,31 +80,31 @@
             <div class="modal-body panel-body">
                 <center>
                 <div class="panel panel-modal">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Tambah Admin</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <form class="form-tambah">
-                                    <input type="text" class="form-control" placeholder="Username">
-                                    <br>
-                                    <input type="password" class="form-control" placeholder="Password">
-                                    <br>
-                                    <select class="form-control">
-                                        <option value="smasa">SMAN 1 Kota Probolinggo</option>
-                                        <option value="smada">SMAN 2 Kota Probolinggo</option>
-                                        <option value="bla">blablableble</option>
-                                        <option value="bla">blablableble</option>
-                                    </select>
-                                    <br>    
-                                    </form>
-                                    
-                                </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tambah Admin</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-tambah" method="POST" action="<?php echo base_url() ?>Data_admin/tambah_admin">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" name="sekolah">
+                                    <option value="SMAN 1 Kota Probolinggo">SMAN 1 Kota Probolinggo</option>
+                                    <option value="SMAN 2 Kota Probolinggo">SMAN 2 Kota Probolinggo</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 </center>
             </div>
             <div class="modal-footer">
-                <a href="" class="btn btn-danger">Cancel</a>
-                <a href="" class="btn btn-default" data-dismiss="modal">TAMBAH</a>
+                <a href="" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+                <input type="button" value="TAMBAH" class="btn btn-default" id="tambah_admin" >
             </div>
         </div>
     </div>

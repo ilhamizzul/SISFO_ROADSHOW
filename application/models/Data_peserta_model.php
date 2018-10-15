@@ -45,6 +45,21 @@ class Data_peserta_model extends CI_Model {
 		
 	}
 
+	public function edit_status_absen($id_peserta)
+	{
+		$data = array('status_absen' => 'hadir' );
+
+		return $this->db->where('id_peserta', $id_peserta)
+						->update('tb_peserta', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
 }
 
 /* End of file data_peserta_model.php */

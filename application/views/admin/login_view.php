@@ -33,16 +33,28 @@
                             <div class="logo text-center"><h2>Hola</h2></div>
                             <p class="lead">Login to your account</p>
                         </div>
-                        <form class="form-auth-small" action="index.php">
+                        <?php 
+                            $failed = $this->session->flashdata('failed');
+
+                            if (!empty($failed)) {
+                                echo '
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <i class="fa fa-times-circle"></i> '.$failed.'
+                                    </div>
+                                ';
+                            }
+                        ?>
+                        <form class="form-auth-small" method="post" action="<?php echo base_url(); ?>login/login">
                             <div class="form-group">
-                                <label for="signin-email" class="control-label sr-only">Username</label>
-                                <input type="text" class="form-control" id="signin-email" value="" placeholder="Username">
+                                <label class="control-label sr-only">Username</label>
+                                <input type="text" class="form-control" name="username" placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <label for="signin-password" class="control-label sr-only">Password</label>
-                                <input type="password" class="form-control" id="signin-password" value="" placeholder="Password">
+                                <label class="control-label sr-only">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+                            <input type="submit" value="SUBMIT" class="btn btn-primary btn-lg btn-block">
                         </form>
                     </div>
                 </div>

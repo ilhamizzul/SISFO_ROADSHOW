@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2018 at 08:08 AM
+-- Generation Time: Oct 15, 2018 at 09:22 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -32,16 +32,18 @@ CREATE TABLE `tb_admin` (
   `id_admin` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `sekolah` varchar(50) NOT NULL
+  `sekolah` varchar(50) DEFAULT NULL,
+  `status` enum('admin','super_admin') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_admin`
 --
 
-INSERT INTO `tb_admin` (`id_admin`, `username`, `password`, `sekolah`) VALUES
-(1, 'sma1', 'sma1', 'sma 1'),
-(2, 'sma2', 'sma2', 'sma 2');
+INSERT INTO `tb_admin` (`id_admin`, `username`, `password`, `sekolah`, `status`) VALUES
+(1, 'sma1', 'sma1', 'sma 1', 'admin'),
+(2, 'sma2', 'sma2', 'sma 2', 'admin'),
+(3, 'superadmin', 'superadmin', NULL, 'super_admin');
 
 -- --------------------------------------------------------
 
@@ -60,12 +62,12 @@ CREATE TABLE `tb_nmrpeserta` (
 --
 
 INSERT INTO `tb_nmrpeserta` (`id_nmr`, `nomor_peserta`, `status`) VALUES
-(1, 111111, 'nonaktif'),
-(2, 222222, 'nonaktif'),
-(3, 333333, 'nonaktif'),
+(2, 222222, 'aktif'),
 (4, 444444, 'nonaktif'),
 (5, 555555, 'nonaktif'),
-(6, 666666, 'nonaktif');
+(6, 666666, 'aktif'),
+(7, 6969, 'nonaktif'),
+(8, 6868, 'nonaktif');
 
 -- --------------------------------------------------------
 
@@ -82,8 +84,16 @@ CREATE TABLE `tb_peserta` (
   `asal_sekolah` varchar(50) NOT NULL,
   `kelas` varchar(50) NOT NULL,
   `id_ruang` int(11) NOT NULL,
-  `staus_absen` enum('hadir','tidak_hadir') NOT NULL
+  `status_absen` enum('hadir','tidak_hadir') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_peserta`
+--
+
+INSERT INTO `tb_peserta` (`id_peserta`, `id_nmr`, `nama_peserta`, `email`, `no_hp`, `asal_sekolah`, `kelas`, `id_ruang`, `status_absen`) VALUES
+(4, 2, 'Ilham izzul hadyan', 'ilhamizzul@gmail.com', '085335831672', 'SMAN 1 Kota Probolinggo', 'MIPA 2', 2, 'hadir'),
+(5, 6, 'Ardhanna Zafran', 'sureiya7@gmail.com', '085234831674', 'SMAN 2 Kota Probolinggo', 'MIPA 3', 2, 'tidak_hadir');
 
 -- --------------------------------------------------------
 
@@ -148,19 +158,19 @@ ALTER TABLE `tb_ruang`
 -- AUTO_INCREMENT for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_nmrpeserta`
 --
 ALTER TABLE `tb_nmrpeserta`
-  MODIFY `id_nmr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_nmr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `tb_peserta`
 --
 ALTER TABLE `tb_peserta`
-  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_ruang`

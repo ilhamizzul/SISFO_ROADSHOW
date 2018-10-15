@@ -7,8 +7,16 @@ class Data_nomor_peserta_model extends CI_Model {
 	{
 		return $this->db->select('*')
 						->from('tb_nmrpeserta')
+						->where('status', 'aktif')
 						->get()
 						->result();
+	}
+
+	public function get_nomor_peserta_by_id($id_nmr_peserta)
+	{
+		return $this->db->where('id_nmr', $id_nmr_peserta)
+						->get('tb_nmrpeserta')
+						->row();
 	}
 
 	public function get_nomor_peserta_non_active()
@@ -24,6 +32,21 @@ class Data_nomor_peserta_model extends CI_Model {
 	{
 		return $this->db->where('id_nmr', $idnmr)->update('tb_nmrpeserta', $data2);
 
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
+	public function delete_nmr_peserta($id_nmr_peserta)
+	{
+		$non_aktif =  $this->db->where('id_nmr', $id_nmr_peserta)
+						->delete('tb_nmrpeserta');
+
+		return $non_aktif;
+		
 		if ($this->db->affected_rows() > 0) {
 			return TRUE;
 		} else {
