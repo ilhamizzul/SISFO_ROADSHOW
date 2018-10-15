@@ -4,7 +4,7 @@
             <h3 class="panel-title">Input Nomor Peserta</h3>
         </div>
         <div class="panel-body">
-            <input class="form-control input-md" id="nomor_peserta" placeholder="Nomor Peserta" type="text">
+            <input class="form-control input-md" id="nomor_peserta" maxlength="6" placeholder="Nomor Peserta (6 input)" type="text">
             <br>
             <!-- <a class="btn btn-primary">Tambah Input</a> -->
             <input type="button" class="btn btn-md btn-primary" value="Tambah Input" id="add_data">

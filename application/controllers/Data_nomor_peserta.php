@@ -35,9 +35,13 @@ class Data_nomor_peserta extends CI_Controller {
 			);
 			$this->Input_nomor_peserta_model->add_no_peserta($data[$i]);
 		}
-		// $this->session->set_flashdata('success', 'Sukses COIIII');
-		// redirect('Data_nomor_peserta');
 
+	}
+
+	public function check()
+	{
+		$data = $this->Input_nomor_peserta_model->check_nomor_peserta($this->input->post('nomor_peserta'));
+		echo json_encode(array('c'=>count($data)));
 	}
 
 }

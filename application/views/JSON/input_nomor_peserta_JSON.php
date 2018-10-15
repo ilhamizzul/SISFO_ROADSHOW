@@ -5,12 +5,30 @@
 			var no = $('#table_data tbody tr').length + 1;
 			var nomor_peserta = $('#nomor_peserta').val();
 
-			$('#table_data tbody:last-child').append(
-					'<tr>' + 
-						'<td>' + no + '</td>'+
-						'<td>' + nomor_peserta + '</td>' + 
-					'</tr>'
-				);
+			if (nomor_peserta == $('#table_data tbody tr td:last-child').text()) {
+				alert('Data yang diinputkan telah ada');
+			} else {
+				var response;
+				$.ajax({
+					url: '<?php echo base_url() ?>Data_nomor_peserta/check',
+					type: 'POST',
+					dataType: 'json',
+					data: {nomor_peserta: nomor_peserta},
+					success: function(result) {
+						if (result.c == 0) {
+							$('#table_data tbody:last-child').append(
+								'<tr>' + 
+									'<td>' + no + '</td>'+
+									'<td>' + nomor_peserta + '</td>' + 
+								'</tr>'
+							);
+						} else {
+							alert('Data yang diinputkan telah ada');
+						}
+					}
+				});
+			}
+				
 
 			$('#nomor_peserta').val('');
 		});

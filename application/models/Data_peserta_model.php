@@ -33,6 +33,18 @@ class Data_peserta_model extends CI_Model {
 		
 	}
 
+	public function delete_data_peserta($id_peserta)
+	{
+		return $this->db->where('id_peserta', $id_peserta)->delete('tb_peserta');
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
 }
 
 /* End of file data_peserta_model.php */

@@ -42,7 +42,7 @@
                                                     <td>'.$data->nama_ruang.'</td>
                                                     <td>'.$data->status_absen.'</td>
                                                     <td>
-                                                        <a data-toggle="modal" data-target="#modalHapus" class="btn btn-danger">Hapus</a>
+                                                        <a data-toggle="modal" data-target="#modalHapus" onclick="delete_peserta('.$data->id_peserta.')" class="btn btn-danger">Hapus</a>
                                                         <a class="btn btn-default">Absen</a>
                                                     </td>
                                                 </tr>
@@ -75,7 +75,7 @@
                 </center>
             </div>
             <div class="modal-footer">
-                <a href="" class="btn btn-danger">YA</a>
+                <a href="" id="delete_data_peserta" class="btn btn-danger">YA</a>
                 <a href="" class="btn btn-default" data-dismiss="modal">TIDAK</a>
             </div>
         </div>

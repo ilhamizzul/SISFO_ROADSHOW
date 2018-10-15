@@ -57,6 +57,18 @@ class Data_peserta extends CI_Controller {
 		
 	}
 
+	public function delete_peserta($id_peserta)
+	{
+		if ($this->Data_peserta_model->delete_data_peserta($id_peserta) == TRUE) {
+			$this->session->set_flashdata('success', 'Data Peserta Berhasil Dihapus');
+			redirect('Data_peserta');
+		} else {
+			$this->session->set_flashdata('failed', 'Data Peserta Gagal Dihapus');
+			redirect('Data_peserta');
+		}
+		
+	}
+
 }
 
 /* End of file data_peserta.php */
