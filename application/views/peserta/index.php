@@ -29,41 +29,30 @@
     <!-- DATA TABLE BLM BS BEKERJA -->
 </head>
 
-<body>
-<!-- WRAPPER -->
-<div id="wrapper">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="brand">
-            <a href=""><b>RoadShow2018</b></a>
-        </div>
-        <div class="container-fluid">
-            <div class="navbar-btn">
-               <!--  <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button> -->
-            </div>
-            <div id="navbar-menu">
-                <!-- <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Option</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url() ?>login"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
-                        </ul>
-                    </li>
-                </ul> -->
-            </div>
-        </div>
-    </nav>
-    <!-- END NAVBAR -->
-
+<body id="body-peserta">
     <!-- MAIN -->
-    <div class="main">
+    <div class="main" id="main">
         <!-- MAIN CONTENT -->
-        <div class="main-content">
-            <div class="container-fluid">
+        <div class="container-fluid contain-peserta">
+            <div class="">
                 <!-- OVERVIEW -->
-                    <?php 
-                        $this->load->view($main_view);
-                     ?>
+                    <div class="image-side"></div>
+                    <div class="panel panel-default panel-peserta">
+                        <div class="panel-body" id="panel-peserta">
+
+                            <form action="" class="form-peserta">
+                                <div class="group">
+                                    <input type="text" class="input-md" id="input-peserta" name="input_nopes">
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                    <label>Masukkan Nomor Peserta</label>
+                                </div>
+                            </form>
+                            <button type="submit" class="btn btn-submit btn-peserta">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
                 <!-- END OVERVIEW -->
             </div>
         </div>
@@ -76,7 +65,6 @@
             <p class="copyright">&copy; RoadShow2k18. All Rights Reserved.</p>
         </div>
     </footer>
-</div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
 <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
@@ -86,23 +74,10 @@
 <script src="<?php echo base_url(); ?>assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/scripts/klorofil-common.js"></script>
 
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/jquery.dataTables.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/jszip.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
-
-
-<script src="<?php echo base_url();?>assets/js/jquery-datatable.js"></script>
-
 <?php $this->load->view($JSON); ?>
 
 <!-- DATA TABLE BLM BS BEKERJTA -->
+
 
 
 </body>
