@@ -22,5 +22,5 @@ class Dashboard_model extends CI_Model {
 
 }
 
-/* End of file dashboard_model.php */
-/* Location: ./application/models/dashboard_model.php */
+/* End of file Dashboard_model.php */
+/* Location: ./application/models/Dashboard_model.php */

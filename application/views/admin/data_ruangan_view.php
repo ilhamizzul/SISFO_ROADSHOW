@@ -22,21 +22,26 @@
                     <?php 
                         $no = 1;
                         foreach ($data_ruangan as $data) {
-                            echo '
-                                <tr>
+                            echo '<tr>
                                     <td>'.$no++.'</td>
                                     <td>'.$data->nama_ruang.'</td>
                                     <td>'.$data->letak_ruang.'</td>
                                     <td>
-                                        <button type="button" data-toggle="modal" data-target="#modalHapus" onclick="delete_ruang('.$data->id_ruang.')" class="btn btn-danger">Hapus</button>
-                                        <a class="btn btn-default">Edit Letak Ruangan</a>
+                                        ';if($data->id_ruang != 1){
+                                                echo '
+                                                <a href="Data_ruangan_peserta/get_data_by_id/'.$data->id_ruang.'" class="btn btn-default">Lihat Daftar Peserta</a>
+                                                <button type="button" data-toggle="modal" data-target="#modalEditLetak" onclick="edit_ruang('.$data->id_ruang.')" class="btn btn-primary">Edit Letak Ruangan</button>
+                                                <button type="button" data-toggle="modal" data-target="#modalHapus" onclick="delete_ruang('.$data->id_ruang.')" class="btn btn-danger">Hapus</button>';
+                                            }else{
+                                                echo '<a href="Data_ruangan_peserta/get_data_by_id/'.$data->id_ruang.'" class="btn btn-default">Daftar Peserta Belum Memiliki Ruangan</a>';
+                                            }'
                                     </td>
                                 </tr>
+
+
                             ';
                         }
                     ?>
-                                
-
                 </tbody>
             </table>
         </div>
@@ -101,6 +106,43 @@
             <div class="modal-footer">
                 <a href="" class="btn btn-danger" data-dismiss="modal">Cancel</a>
                 <input type="button" class="btn btn-default" value="TAMBAH" id="submit_data_ruangan" >
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL EDIT LETAK -->
+<div id="modalEditLetak" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content panel">
+            <div class="modal-header panel-heading">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+            <div class="modal-body panel-body">
+                <center>
+                    <div class="panel panel-modal">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Edit Ruangan</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form id="form_edit" class="form-tambah" method="post" action="">
+                                <div class="form-group">
+                                    <input type="text" class="form-control"name="nama_ruang" placeholder="Nama Ruangan">       
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control"name="letak_ruang" placeholder="Letak Ruangan">
+                                </div>
+                                <button style="float: left;" type="submit" class="btn btn-default" id="submit_data_ruangan">Save</button>  
+                                <a style="float: left;margin-left: 5px;"href="" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+                            </form>
+                        </div>
+                    </div>
+                </center>
+            </div>
+            <div class="modal-footer">
+                
             </div>
         </div>
     </div>

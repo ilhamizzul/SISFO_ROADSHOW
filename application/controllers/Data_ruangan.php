@@ -49,6 +49,20 @@ class Data_ruangan extends CI_Controller {
 		
 	}
 
+	public function edit_letak_ruangan($id_ruang)
+    {
+
+    	if ($this->session->userdata('logged_in') == TRUE) {
+                if($this->Data_ruangan_model->edit_letak_ruangan($id_ruang)==TRUE){
+                	redirect('Data_ruangan');
+                }else{
+                    redirect('Login');
+                }
+        } else {
+            redirect('Login');
+        }
+    }
+
 }
 
 /* End of file data_ruangan.php */

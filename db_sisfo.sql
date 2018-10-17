@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 15, 2018 at 09:22 PM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Host: localhost
+-- Generation Time: Oct 17, 2018 at 12:07 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -63,11 +63,11 @@ CREATE TABLE `tb_nmrpeserta` (
 
 INSERT INTO `tb_nmrpeserta` (`id_nmr`, `nomor_peserta`, `status`) VALUES
 (2, 222222, 'aktif'),
-(4, 444444, 'nonaktif'),
-(5, 555555, 'nonaktif'),
+(4, 444444, 'aktif'),
+(5, 555555, 'aktif'),
 (6, 666666, 'aktif'),
-(7, 6969, 'nonaktif'),
-(8, 6868, 'nonaktif');
+(7, 6969, 'aktif'),
+(8, 6868, 'aktif');
 
 -- --------------------------------------------------------
 
@@ -92,8 +92,12 @@ CREATE TABLE `tb_peserta` (
 --
 
 INSERT INTO `tb_peserta` (`id_peserta`, `id_nmr`, `nama_peserta`, `email`, `no_hp`, `asal_sekolah`, `kelas`, `id_ruang`, `status_absen`) VALUES
-(4, 2, 'Ilham izzul hadyan', 'ilhamizzul@gmail.com', '085335831672', 'SMAN 1 Kota Probolinggo', 'MIPA 2', 2, 'hadir'),
-(5, 6, 'Ardhanna Zafran', 'sureiya7@gmail.com', '085234831674', 'SMAN 2 Kota Probolinggo', 'MIPA 3', 2, 'tidak_hadir');
+(10, 2, 'Arddhana Zhafran', 'arddhana_amanullah_24rpl@student.smktelkom-mlg.sch', '082288035555', 'SMAN 1 Kota Probolinggo', 'XII IPS 2', 2, 'tidak_hadir'),
+(11, 6, 'Fauzan Perwira', 'fauzan@fauz', '086666666666', 'SMAN 1 Kota Probolinggo', 'XII IPS 1', 2, 'tidak_hadir'),
+(12, 5, 'Aji Nur', 'aji@nur', '082222222222', 'SMAN 1 Kota Probolinggo', 'XII IPS 2', 4, 'tidak_hadir'),
+(13, 4, 'CekaCeka', 'ceka@ceka', '082234456444', 'SMAN 1 Kota Probolinggo', 'XII IPS 2', 4, 'tidak_hadir'),
+(14, 8, 'Ahmad Albar', 'ahmad@ahmad', '082288345666', 'SMAN 1 Kota Probolinggo', 'XII IPS 2', 2, 'tidak_hadir'),
+(15, 7, 'Jhonny Jon', 'jon@jon', '082288345534', 'SMAN 1 Kota Probolinggo', 'XII IPS 1', 2, 'tidak_hadir');
 
 -- --------------------------------------------------------
 
@@ -112,8 +116,9 @@ CREATE TABLE `tb_ruang` (
 --
 
 INSERT INTO `tb_ruang` (`id_ruang`, `nama_ruang`, `letak_ruang`) VALUES
-(1, 'weebo', 'mipa 1'),
-(2, 'kpopers', 'mipa 2');
+(1, '', ''),
+(2, 'Ruang 1', 'XII IPS 1'),
+(4, 'Ruang 2', 'XII IPS 2');
 
 --
 -- Indexes for dumped tables
@@ -170,13 +175,13 @@ ALTER TABLE `tb_nmrpeserta`
 -- AUTO_INCREMENT for table `tb_peserta`
 --
 ALTER TABLE `tb_peserta`
-  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tb_ruang`
 --
 ALTER TABLE `tb_ruang`
-  MODIFY `id_ruang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ruang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -186,8 +191,8 @@ ALTER TABLE `tb_ruang`
 -- Constraints for table `tb_peserta`
 --
 ALTER TABLE `tb_peserta`
-  ADD CONSTRAINT `tb_peserta_ibfk_1` FOREIGN KEY (`id_nmr`) REFERENCES `tb_nmrpeserta` (`id_nmr`),
-  ADD CONSTRAINT `tb_peserta_ibfk_2` FOREIGN KEY (`id_ruang`) REFERENCES `tb_ruang` (`id_ruang`);
+  ADD CONSTRAINT `tb_peserta_ibfk_1` FOREIGN KEY (`id_nmr`) REFERENCES `tb_nmrpeserta` (`id_nmr`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tb_peserta_ibfk_2` FOREIGN KEY (`id_ruang`) REFERENCES `tb_ruang` (`id_ruang`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

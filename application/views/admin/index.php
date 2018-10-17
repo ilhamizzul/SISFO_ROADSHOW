@@ -21,7 +21,9 @@
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>assets/img/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/js/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css">
+
+
+
 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom-admin.css">
 
@@ -87,11 +89,11 @@
                         <a href="<?php echo base_url() ?>data_ruangan" class="<?php if($this->uri->segment(1)=="data_ruangan"){echo "active";}?>"><i class="lnr lnr-database"></i> <span>Data Ruangan</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url() ?>data_ruangan_peserta" class="<?php if($this->uri->segment(1)=="data_ruangan_peserta"){echo "active";}?>">
+                    <!--<li>
+                        <a href="<?php /*echo base_url() */?>data_ruangan_peserta" class="<?php /*if($this->uri->segment(1)=="data_ruangan_peserta"){echo "active";}*/?>">
                             <i class="lnr lnr-apartment"></i> <span>Data Ruangan Peserta</span>
                         </a>
-                    </li>
+                    </li>-->
                     <li>
                         <a href="<?php echo base_url() ?>data_nomor_peserta" class="<?php if($this->uri->segment(1)=="data_nomor_peserta"){echo "active";}?>">
                             <i class="lnr lnr-list"></i> <span>Data Nomor Peserta</span>
@@ -182,7 +184,11 @@
 
 
 
+
+
 <script src="<?php echo base_url();?>assets/js/jquery-datatable.js"></script>
+
+
 
 <?php $this->load->view($JSON); ?>
 
