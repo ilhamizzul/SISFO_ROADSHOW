@@ -126,14 +126,33 @@
                                 <div class="form-group">
                                     <select class="form-control" name="asal_sekolah">
                                         <option><-- Asal Sekolah --></option>
-                                        <option value="SMAN 1 Kota Probolinggo">SMAN 1 Kota Probolinggo</option>
-                                        <option value="SMAN 2 Kota Probolinggo">SMAN 2 Kota Probolinggo</option>
+                                        <option value="SMAN 1 KOTA PROBOLINGGO">SMAN 1 KOTA PROBOLINGGO</option>
+                                        <option value="SMAN 2 KOTA PROBOLINGGO">SMAN 2 KOTA PROBOLINGGO</option>
+                                        <option value="SMAN 3 KOTA PROBOLINGGO">SMAN 3 KOTA PROBOLINGGO</option>
+                                        <option value="SMAN 4 KOTA PROBOLINGGO">SMAN 4 KOTA PROBOLINGGO</option>
+                                        <option value="SMKN 1 KOTA PROBOLINGGO">SMKN 1 KOTA PROBOLINGGO</option>
+                                        <option value="SMKN 2 KOTA PROBOLINGGO">SMKN 2 KOTA PROBOLINGGO</option>
+                                        <option value="SMKN 3 KOTA PROBOLINGGO">SMKN 3 KOTA PROBOLINGGO</option>
+                                        <option value="SMKN 4 KOTA PROBOLINGGO">SMKN 4 KOTA PROBOLINGGO</option>
+                                        <option value="MAN 1 KOTA PROBOLINGGO"> MAN 1 KOTA PROBOLINGGO</option>
+                                        <option value="MAN 2 KOTA PROBOLINGGO"> MAN 2 KOTA PROBOLINGGO</option>
+                                        <option value="SMA TARUNA DRA. ZULAEHA">SMA TARUNA DRA. ZULAEHA</option>
+                                        <option value="SMAN 1 DRINGU">SMAN 1 DRINGU</option>
+                                        <option value="SMAN 1 KRAKSAAN">SMAN 1 KRAKSAAN</option>
+                                        <option value="SMA TUNAS LUHUR">SMA TUNAS LUHUR</option>
+                                        <option value="SMAN 1 TONGAS">SMAN 1 TONGAS</option>
+                                        <option value="SMAN 1 LECES">SMAN 1 LECES</option>
+                                        <option value="SMAK MATER DEI">SMAK MATER DEI</option>
+                                        <option value="MAN PAJARAKAN">MAN PAJARAKAN</option>
+                                        <option value="SMAN 1 PAITON">SMAN 1 PAITON</option>
+                                        <option value="SMAN 1 GENDING">SMAN 1 GENDING</option>
                                     </select>    
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" required name="kelas" placeholder="Kelas">
                                 </div>
-                                <div class="form-group">
+                                <input type="hidden" name="ruang_ujian" value="3">
+                                <!-- <div class="form-group">
                                     <select class="form-control" name="ruang_ujian">
                                         <?php 
                                             foreach ($data_ruangan as $data) {
@@ -143,7 +162,7 @@
                                             }
                                         ?>
                                     </select>    
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>

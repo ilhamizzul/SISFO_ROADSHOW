@@ -15,6 +15,7 @@
 					dataType: 'json',
 					data: {nomor_peserta: nomor_peserta},
 					success: function(result) {
+						console.log(result);
 						if (result.c == 0) {
 							$('#table_data tbody:last-child').append(
 								'<tr>' + 

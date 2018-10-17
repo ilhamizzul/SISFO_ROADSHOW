@@ -60,6 +60,7 @@ class Data_nomor_peserta extends CI_Controller {
 	public function check()
 	{
 		$data = $this->Input_nomor_peserta_model->check_nomor_peserta($this->input->post('nomor_peserta'));
+		// print_r($data);
 		echo json_encode(array('c'=>count($data)));
 	}
 

@@ -61,10 +61,11 @@ class Data_peserta extends CI_Controller {
 		
 	}
 
-	public function delete_peserta($id_peserta)
+	public function delete_peserta($id_peserta, $id_nmr_peserta)
 	{
 		if ($this->session->userdata('logged_in') == TRUE) {
 			if ($this->Data_peserta_model->delete_data_peserta($id_peserta) == TRUE) {
+				$this->Data_nomor_peserta_model->delete_nmr_peserta($id_nmr_peserta);
 				$this->session->set_flashdata('success', 'Data Peserta Berhasil Dihapus');
 				redirect('Data_peserta');
 			} else {

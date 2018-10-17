@@ -11,8 +11,7 @@ class Input_nomor_peserta_model extends CI_Model {
 	public function check_nomor_peserta($nomor_peserta)
 	{
 		$q = $this->db->where('nomor_peserta', $nomor_peserta)->get('tb_nmrpeserta');
-		return $q->row(0);
-
+		return $q->result();
 	}
 
 }
