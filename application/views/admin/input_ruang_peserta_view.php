@@ -1,50 +1,24 @@
 
-<div class="col-md-6">
+<div class="col-md-12">
     <div class="panel">
         <div class="panel-heading">
-            <h3 class="panel-title">Input Nomor Peserta</h3>
+            <h3 class="panel-title">Tambah Peserta Ruangan</h3>
         </div>
         <div class="panel-body">
-            <form action="">
-                <input class="form-control input-md" placeholder="RDTO1" type="text" disabled>
-                <input class="form-control input-md" placeholder="Nomor Peserta" type="text">
-                <input class="form-control input-md" placeholder="Nama Peserta" type="text">
-                <input class="form-control input-md" placeholder="Asal Sekolah" type="text">
+            <form action="<?php echo base_url();?>Data_ruangan_peserta/edit_ruangan/<?php echo $data_ruang->id_ruang?>" method="post" class="">
+                <select name="id_peserta" id="id_peserta" class="form-control">
+                    <?php
+                    $no = 1;
+                    foreach ($data_peserta as $data) {
+                    echo '
+                        <option value="'.$data->id_peserta.'">'.$data->nama_peserta.'   |   <span>     '.$data->asal_sekolah.'</span></option>
+                    ';}
+                    ?>
+                </select>
+                <br>
+                <button class="btn btn-primary" type="submit">Tambah Peserta</button>
             </form>
-            <br>
-            <a class="btn btn-primary">Tambah Input</a>
+
         </div>
     </div>
 </div>
-
-<div class="col-md-6">
-    <!-- TABLE HOVER -->
-    <div class="panel">
-        <div class="panel-heading">
-            <h3 class="panel-title">Daftar Peserta di Ruang RDTO1</h3>
-        </div>
-        <div class="panel-body">
-            <div class="table-responsive table-wrapper-scroll-y">
-                <table class=" display table table-hover" id="dataTable">
-                <thead>
-                <tr>
-                    <th>NO</th>
-                    <th>Nomor Peserta</th>
-                    <th>Nomor Peserta</th>
-                    <th>Asal Sekolah</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                </tbody>
-            </table>
-            </div>
-            <div class="col-md-12">
-                <a class="btn btn-block">TAMBAH KE DATABASE</a>
-            </div>
-        </div>
-    </div>

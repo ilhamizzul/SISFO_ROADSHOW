@@ -43,7 +43,23 @@ class Data_ruangan_model extends CI_Model {
 		} else {
 			return FALSE;
 		}
-		
+	}
+
+	public function edit_letak_ruangan($id_ruang)
+	{
+		$data = array(
+			'nama_ruang' => $this->input->post('nama_ruang'),
+			'letak_ruang' =>  $this->input->post('letak_ruang')
+		);
+    	$this->db->set($data)
+    				->where('id_ruang',$id_ruang)
+    			 	->update('tb_ruang');
+
+	    if($this->db->affected_rows()>0){
+	    	return TRUE;
+	    }else{
+	    	return FALSE;
+	    }
 	}
 
 }
