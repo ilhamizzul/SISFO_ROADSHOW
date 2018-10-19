@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard | Roadshow</title>
+    <title>Hello | Roadshow</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -38,54 +38,59 @@
             <!-- OVERVIEW -->
             <div class="image-side2"></div>
             <div class="title">
-                <h1>Halo, Jhon Smith</h1>
+                <h1>Halo, <?php echo $data_diri->nama_peserta;?></h1>
             </div>
             <div class="panel panel-default panel-peserta2">
                 <div class="panel-body" id="panel-peserta2">
                     <div class="col-md-6 landing">
                         <form action="" class="form-peserta">
                             <div class="group" style="margin-top: 10px;">
-                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="120232">
+                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->nomor_peserta;?>" disabled>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Nomor Peserta</label>
                             </div>
                             <div class="group">
-                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="Jhon Smith">
+                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->nama_peserta;?>" disabled>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Nama</label>
                             </div>
                             <div class="group">
-                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="jhonsmith@gmail.com">
+                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->email;?>" disabled>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Email</label>
                             </div>
                             <div class="group">
-                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="08288035555">
+                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->no_hp;?>"disabled>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Nomor HP</label>
                             </div>
                             <div class="group">
-                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="SMAN 2 Kota Probolinggo">
+                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->asal_sekolah;?>"  disabled>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Asal Sekolah</label>
                             </div>
                             <div class="group">
-                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="XII IPA 2">
+                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->kelas;?>"  disabled>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Kelas</label>
                             </div>
                             <div class="group">
-                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="-">
+                                <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->nama_ruang;?>"  disabled>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
                                 <label>Ruang Tryout</label>
                             </div>
+
+                            <div class="group">
+                                <a class="btn btn-default" href="<?php echo base_url();?>Peserta/end_session">Back to Home</a>
+                            </div>
+
                         </form>
                     </div>
                     <div class="col-md-6 landing">
@@ -126,3 +131,4 @@
 </body>
 
 </html>
+

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2018 at 12:07 PM
+-- Generation Time: Oct 19, 2018 at 09:33 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -67,7 +67,11 @@ INSERT INTO `tb_nmrpeserta` (`id_nmr`, `nomor_peserta`, `status`) VALUES
 (5, 555555, 'aktif'),
 (6, 666666, 'aktif'),
 (7, 6969, 'aktif'),
-(8, 6868, 'aktif');
+(8, 6868, 'aktif'),
+(9, 123123, 'aktif'),
+(10, 886744, 'nonaktif'),
+(11, 998443, 'aktif'),
+(12, 885334, 'nonaktif');
 
 -- --------------------------------------------------------
 
@@ -97,7 +101,9 @@ INSERT INTO `tb_peserta` (`id_peserta`, `id_nmr`, `nama_peserta`, `email`, `no_h
 (12, 5, 'Aji Nur', 'aji@nur', '082222222222', 'SMAN 1 Kota Probolinggo', 'XII IPS 2', 4, 'tidak_hadir'),
 (13, 4, 'CekaCeka', 'ceka@ceka', '082234456444', 'SMAN 1 Kota Probolinggo', 'XII IPS 2', 4, 'tidak_hadir'),
 (14, 8, 'Ahmad Albar', 'ahmad@ahmad', '082288345666', 'SMAN 1 Kota Probolinggo', 'XII IPS 2', 2, 'tidak_hadir'),
-(15, 7, 'Jhonny Jon', 'jon@jon', '082288345534', 'SMAN 1 Kota Probolinggo', 'XII IPS 1', 2, 'tidak_hadir');
+(15, 7, 'Jhonny Jon', 'jon@jon', '082288345534', 'SMAN 1 Kota Probolinggo', 'XII IPS 1', 2, 'tidak_hadir'),
+(17, 9, 'Toni Ahmad', 'toniahmad@gmail.com', '082288035555', 'SMAN 1 KOTA PROBOLINGGO', 'XII IPS 2', 1, 'tidak_hadir'),
+(19, 11, 'Michael Chand', 'michaelchan@gmail.com', '082288035555', 'SMAN 2 KOTA PROBOLINGGO', 'XI', 1, 'tidak_hadir');
 
 -- --------------------------------------------------------
 
@@ -163,19 +169,19 @@ ALTER TABLE `tb_ruang`
 -- AUTO_INCREMENT for table `tb_admin`
 --
 ALTER TABLE `tb_admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_nmrpeserta`
 --
 ALTER TABLE `tb_nmrpeserta`
-  MODIFY `id_nmr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_nmr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_peserta`
 --
 ALTER TABLE `tb_peserta`
-  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tb_ruang`

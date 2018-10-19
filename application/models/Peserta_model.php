@@ -1,0 +1,115 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Peserta_model extends CI_Model {
+
+	public function cek_nomor_peserta()
+	{
+		$nomor_peserta = $this->input->post('input_nopes');
+		$query = $this->db->where('nomor_peserta', $nomor_peserta)
+						  ->get('tb_nmrpeserta');
+
+		$data_peserta = $query->row_array();
+
+			$session_peserta = array(
+				'logged_in_peserta' => TRUE,
+				'nomor_peserta' => $data_peserta['nomor_peserta'],
+				'id_nmr' => $data_peserta['id_nmr']
+			);
+			
+		$this->session->set_userdata( $session_peserta );
+
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+
+	}
+
+
+
+	public function cek_data_diri()
+	{
+		$nomor_peserta = $this->session->userdata('nomor_peserta');
+		$query = $this->db->select('*')
+                 		  ->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+                    	  ->from('tb_peserta')
+                    	  ->where('nomor_peserta',$nomor_peserta)
+                    	  ->get()
+                    	  ->row();
+
+		if($this->db->affected_rows()>0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+
+
+	}
+
+	public function lihat_data_diri()
+	{
+		$nomor_peserta = $this->session->userdata('nomor_peserta');
+		return $this->db->select('*')
+                 		  ->join('tb_peserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+                 		  ->join('tb_ruang', 'tb_ruang.id_ruang = tb_peserta.id_ruang')
+                    	  ->from('tb_nmrpeserta')
+                    	  ->where('nomor_peserta',$nomor_peserta)
+                    	  ->get()
+                    	  ->row();
+	}
+
+	public function cek_status_aktivasi()
+	{
+		$nomor_peserta = $this->session->userdata('nomor_peserta');
+		$query = $this->db->select('*')
+                    	  ->from('tb_nmrpeserta')
+                    	  ->where('nomor_peserta',$nomor_peserta)
+                    	  ->where('status','aktif')
+                    	  ->get()
+                    	  ->row();
+
+		if($this->db->affected_rows()>0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function rubah_status_aktivasi()
+	{
+		$nomor_peserta = $this->session->userdata('nomor_peserta');
+		$query = $this->db->set('status','aktif')
+						  ->where('nomor_peserta',$nomor_peserta)
+						  ->update('tb_nmrpeserta');
+		if($this->db->affected_rows()>0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function add_data_peserta($data)
+	{
+
+		return $this->db->insert('tb_peserta', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
+	public function rubah_daftar_hadir()
+	{
+		# code...
+	}
+
+}
+
+/* End of file Peserta_model */
+/* Location: ./application/models/Peserta_model */

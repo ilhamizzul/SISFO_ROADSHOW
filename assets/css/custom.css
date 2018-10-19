@@ -123,10 +123,13 @@ label {
   -webkit-transition: 0.2s ease all; }
 
 /* active state */
-input:focus ~ label, input:valid ~ label {
+input:focus ~ label, input:valid ~ label, input:disabled ~ label {
   top: -7px;
   font-size: 13px;
   color: #5264AE; }
+
+input:disabled {
+  background-color: white; }
 
 /* BOTTOM BARS ================================= */
 .bar {

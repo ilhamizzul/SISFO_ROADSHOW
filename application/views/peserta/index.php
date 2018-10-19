@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Dashboard | Roadshow</title>
+    <title>Hello | Roadshow</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -40,17 +40,19 @@
                     <div class="panel panel-default panel-peserta">
                         <div class="panel-body" id="panel-peserta">
 
-                            <form action="" class="form-peserta">
+                            <form action="<?php echo base_url();?>peserta/cek_nomor_peserta" method="post" class="form-peserta">
                                 <div class="group">
-                                    <input type="text" class="input-md" id="input-peserta" name="input_nopes">
+                                    <input type="text" class="input-md" id="input-peserta" name="input_nopes" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Masukkan Nomor Peserta</label>
                                 </div>
-                            </form>
-                            <button type="submit" class="btn btn-submit btn-peserta">
+
+                                <button type="submit" class="btn btn-submit btn-peserta">
                                 Submit
-                            </button>
+                                </button>
+                            </form>
+                            
                         </div>
                     </div>
                 <!-- END OVERVIEW -->
