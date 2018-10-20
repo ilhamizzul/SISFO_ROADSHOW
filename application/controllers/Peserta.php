@@ -27,13 +27,13 @@ class Peserta extends CI_Controller {
 
 	public function cek_nomor_peserta()
 	{
-		if ($this->session->userdata('logged_in_peserta') == FALSE) {
+		
 			if($this->Peserta_model->cek_nomor_peserta()==TRUE){
 				if($this->Peserta_model->cek_data_diri()==FALSE){
 					if($this->Peserta_model->rubah_status_aktivasi()==TRUE){
 						redirect('Peserta/registrasi','refresh');
 					}else{
-						redirect('Peserta/end_session','refresh');
+						redirect('Peserta/registrasi','refresh');
 					}
 				}else{
 					redirect('Peserta/landing','refresh');
@@ -41,9 +41,6 @@ class Peserta extends CI_Controller {
 	        }else{
 	        	redirect('Peserta/end_session','refresh');
 	        }
-		}else{
-			redirect('Peserta','refresh');
-		}
 		
 	}
 
@@ -106,8 +103,64 @@ class Peserta extends CI_Controller {
 
     public function end_session()
     {
-    	$this->session->sess_destroy();
+    	$this->session->sess_destroy($session_peserta);
 		redirect('Peserta/index');
+    }
+
+    public function absen(){
+    	if($this->session->userdata('logged_in_peserta')==TRUE){
+    		redirect('Peserta/do_absen','refresh');
+    	}else{
+    		$data['JSON'] = 'JSON/data_admin_JSON';
+			$this->load->view('peserta/absen', $data);
+    	}
+    }
+
+    public function hadir(){
+    	if ($this->session->userdata('status_absen')=='hadir') {
+    		$data['JSON'] = 'JSON/data_admin_JSON';
+			$this->load->view('peserta/hadir', $data);
+    	}else{
+    		redirect('Peserta/absen','refresh');
+    	}
+    }
+
+    public function end_session_absen()
+    {
+    	$this->session->sess_destroy($session_peserta);
+		redirect('Peserta/absen');
+    }
+
+    public function do_absen(){
+    		if($this->session->userdata('logged_in_peserta')==FALSE){
+    		    if($this->Peserta_model->cek_peserta_hadir()==TRUE){
+					if($this->session->userdata('status_absen')=='tidak_hadir'){
+						if($this->Peserta_model->rubah_status_absen()==TRUE){
+							redirect('Peserta/hadir','refresh');
+						}else{
+							
+						}
+					}else{
+						redirect('Peserta/hadir','refresh');
+					}
+		        }else{
+		        	redirect('Peserta/end_session_absen','refresh');
+		        }				
+    		}else{
+	    		if($this->Peserta_model->cek_peserta_aktif()==TRUE){
+					if($this->session->userdata('status_absen')=='tidak_hadir'){
+						if($this->Peserta_model->rubah_status_absen()==TRUE){
+							redirect('Peserta/hadir','refresh');
+						}else{
+							
+						}
+					}else{
+						redirect('Peserta/hadir','refresh');
+					}
+		        }else{
+		        	redirect('Peserta/absen','refresh');
+		        }	
+    		}			
     }
 
 }

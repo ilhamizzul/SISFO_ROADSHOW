@@ -35,30 +35,12 @@
     <div class="main" id="main">
         <!-- MAIN CONTENT -->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 side-image">
-                    <img src="<?php echo base_url();?>assets/img/win.svg" alt="">
-                </div>
-                <div class="col-md-6 panel-peserta">
-                    <h3>Roadshow Protect 2018</h3>
-                    <div class="panel-body" id="panel-peserta">
-                        <form action="<?php echo base_url();?>peserta/cek_nomor_peserta" method="post" class="form-peserta">
-                            <div class="group">
-                                <input type="text" class="input-md" id="input-peserta" name="input_nopes" required>
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label>Masukkan Nomor Peserta</label>
-                            </div>
-
-                            <button type="submit" class="btn btn-submit btn-peserta">
-                                Submit
-                            </button>
-                        </form>
-
-                    </div>
-                </div>
+            <div class="col-md-6 image">
+                <center>
+                    <img src="<?php echo base_url();?>assets/img/thanks.svg" alt="">
+                    <h1>Terimakasih Sudah Hadir, <?php echo($this->session->userdata('nomor_peserta')); ?></h1>
+                </center>
             </div>
-
         </div>
         <!-- END MAIN CONTENT -->
     </div>

@@ -40,9 +40,9 @@
                     <img src="<?php echo base_url();?>assets/img/win.svg" alt="">
                 </div>
                 <div class="col-md-6 panel-peserta">
-                    <h3>Roadshow Protect 2018</h3>
+                    <h3>Absensi Try Out Roadshow 2018</h3>
                     <div class="panel-body" id="panel-peserta">
-                        <form action="<?php echo base_url();?>peserta/cek_nomor_peserta" method="post" class="form-peserta">
+                        <form action="<?php echo base_url();?>peserta/do_absen" method="post" class="form-peserta">
                             <div class="group">
                                 <input type="text" class="input-md" id="input-peserta" name="input_nopes" required>
                                 <span class="highlight"></span>

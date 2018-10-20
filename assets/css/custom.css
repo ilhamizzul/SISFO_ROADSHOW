@@ -52,23 +52,25 @@ body {
   background-color: #e6e6e6;
   margin: 0px auto; }
 
-.image-side {
-  width: 65%;
-  height: 100vh;
-  background-image: url("../img/image.jpeg");
-  float: left; }
-
 .contain-peserta {
   margin: 0;
   padding: 0; }
 
+.side-image {
+  padding: 50px; }
+  .side-image img {
+    margin: 0 auto;
+    width: 175%; }
+
 .panel-peserta {
-  position: absolute;
-  left: 55%;
-  top: 60%; }
+  position: relative;
+  margin-top: 30%;
+  padding-left: 10%;
+  padding-right: 10%; }
+  .panel-peserta h3 {
+    font-weight: bold; }
 
 #panel-peserta {
-  margin: 0px auto;
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
@@ -197,13 +199,15 @@ input:focus ~ .highlight {
 .image-side2 {
   width: 30%;
   height: 100vh;
-  background-image: url("../img/image.jpeg");
+  background-image: url("../img/pref.svg");
+  background-position: center;
+  background-size: 100%;
   background-repeat: no-repeat;
   float: left;
-  position: absolute;
+  position: fixed;
   top: 0%; }
 
-.title {
+.main2 {
   margin-left: 32%; }
 
 .contain-peserta2 {
@@ -211,10 +215,11 @@ input:focus ~ .highlight {
   padding: 0; }
 
 .panel-peserta2 {
-  position: absolute;
-  left: 32%;
-  top: 12%;
-  width: 65%; }
+  position: relative;
+  width: 98%; }
+
+select {
+  background-color: white; }
 
 #panel-peserta2 {
   margin: 0px auto;
@@ -255,37 +260,70 @@ input:focus ~ .highlight {
   padding: 10px;
   overflow: hidden; }
 
+/*hadir*/
+.image {
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  padding: 30px; }
+  .image img {
+    width: 90%;
+    margin: 0 auto; }
+  .image h1 {
+    margin-top: 30px;
+    font-weight: bold; }
+
+/*view mobile*/
 @media screen and (max-width: 375px) {
+  .image {
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 30px; }
+    .image img {
+      width: 90%;
+      margin: 0 auto; }
+    .image h1 {
+      margin-top: 30px;
+      font-weight: bold; }
+
   .image-side2 {
     display: none; }
 
   .panel-peserta2 {
-    position: absolute;
-    left: 10%;
-    top: 12%;
-    width: 90%; }
+    position: relative;
+    width: 100%; }
 
-  .title {
+  .main2 {
     margin-left: 10%; }
 
-  .image-side {
-    width: 100%;
-    height: 80vh;
-    background-image: url("../img/image.jpeg");
-    float: left; }
+  .side-image {
+    padding: 10px; }
+    .side-image img {
+      margin-top: 15px;
+      margin-left: 15px;
+      vertical-align: middle;
+      width: 100%; }
 
   .panel-peserta {
-    position: absolute;
-    left: 1%;
-    top: 75%; }
+    position: relative;
+    margin-top: 50%;
+    padding-right: 10px;
+    padding-left: 10px; }
+    .panel-peserta h3 {
+      font-weight: bold; }
 
   #panel-peserta {
-    margin: 0px auto;
-    margin-left: 2.5%;
-    padding-left: 15px;
-    padding-right: 15px;
     position: relative;
-    width: 95vw;
+    width: 100%;
     height: 81px;
     border-radius: 3px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
@@ -293,9 +331,9 @@ input:focus ~ .highlight {
 
   .btn-peserta {
     position: absolute;
-    top: 110%;
+    top: 112%;
     width: 90vw;
-    height: 33px;
+    height: 40px;
     border-radius: 30px;
     box-shadow: 0 6px 13px 0 rgba(166, 5, 213, 0.5);
     background-color: #a605d5;

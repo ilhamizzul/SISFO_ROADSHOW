@@ -25,6 +25,59 @@ class Peserta_model extends CI_Model {
 		} else {
 			return FALSE;
 		}
+	}
+
+	public function cek_peserta_aktif()
+	{
+		$nomor_peserta = $this->session->userdata('nomor_peserta');
+		$query = $this->db->where('nomor_peserta', $nomor_peserta)
+						  ->join('tb_peserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+						  ->get('tb_nmrpeserta');
+
+		$data_peserta = $query->row_array();
+
+			$session_peserta = array(
+				'logged_in_peserta' => TRUE,
+				'nomor_peserta' => $data_peserta['nomor_peserta'],
+				'id_nmr' => $data_peserta['id_nmr'],
+				'status_absen' => $data_peserta['status_absen']
+			);
+			
+		$this->session->set_userdata( $session_peserta );
+
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+
+	}
+
+	public function cek_peserta_hadir()
+	{
+		$nomor_peserta = $this->input->post('input_nopes');
+		$query = $this->db->where('nomor_peserta', $nomor_peserta)
+						  ->join('tb_peserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+						  ->get('tb_nmrpeserta');
+
+		$data_peserta = $query->row_array();
+
+			$session_peserta = array(
+				'logged_in_peserta' => TRUE,
+				'nomor_peserta' => $data_peserta['nomor_peserta'],
+				'id_nmr' => $data_peserta['id_nmr'],
+				'status_absen' => $data_peserta['status_absen']
+			);
+			
+		$this->session->set_userdata( $session_peserta );
+
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
 
 	}
 
@@ -104,9 +157,18 @@ class Peserta_model extends CI_Model {
 		
 	}
 
-	public function rubah_daftar_hadir()
+	public function rubah_status_absen()
 	{
-		# code...
+		$id_nmr = $this->session->userdata('id_nmr');
+		$query = $this->db->set('status_absen','hadir')
+						  ->where('id_nmr',$id_nmr)
+						  ->update('tb_peserta');
+
+		if($this->db->affected_rows()>0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
 	}
 
 }
