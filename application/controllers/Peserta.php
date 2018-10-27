@@ -103,7 +103,7 @@ class Peserta extends CI_Controller {
 
     public function end_session()
     {
-    	$this->session->sess_destroy($session_peserta);
+    	$this->session->sess_destroy();
 		redirect('Peserta/index');
     }
 
@@ -127,7 +127,7 @@ class Peserta extends CI_Controller {
 
     public function end_session_absen()
     {
-    	$this->session->sess_destroy($session_peserta);
+    	$this->session->sess_destroy();
 		redirect('Peserta/absen');
     }
 
