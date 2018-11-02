@@ -81,8 +81,6 @@ class Peserta_model extends CI_Model {
 
 	}
 
-
-
 	public function cek_data_diri()
 	{
 		$nomor_peserta = $this->session->userdata('nomor_peserta');
@@ -98,7 +96,6 @@ class Peserta_model extends CI_Model {
 		}else{
 			return FALSE;
 		}
-
 
 	}
 
@@ -168,6 +165,30 @@ class Peserta_model extends CI_Model {
 			return TRUE;
 		}else{
 			return FALSE;
+		}
+	}
+
+	public function mailer($email)
+	{
+		$config = array(
+			'protocol' => 'smtp', 
+			'smtp_host' => 'ssl://smtp.googlemail.com', 
+			'smtp_port' => 465, 
+			'smtp_user' => 'testmailercodeigniter@gmail.com', 
+			'smtp_pass' => 'testermail123'
+		);
+
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+		$this->email->from('testmailercodeigniter@gmail.com', 'Telkom University');
+		$this->email->to($email);
+		$this->email->subject('Test Email PROTECT 2K18');
+		$this->email->message('WOOOHOOOO ISOOO CUUUYYY');
+		$this->email->send();
+		if ($this->email->send()) {
+			echo 'berhasil berhasil berhasil';
+		} else {
+			show_error($this->email->print_debugger());
 		}
 	}
 

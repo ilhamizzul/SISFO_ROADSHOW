@@ -17,7 +17,7 @@ class Peserta extends CI_Controller {
 			$this->load->view('peserta/index', $data);		
 		}else{
 			if($this->Peserta_model->cek_data_diri()==FALSE){
-						redirect('Peserta/registrasi','refresh');
+				redirect('Peserta/registrasi','refresh');
 			}else{
 				redirect('Peserta/landing','refresh');
 			}
@@ -92,7 +92,8 @@ class Peserta extends CI_Controller {
 		);
 
 		if ($this->Peserta_model->add_data_peserta($data) == TRUE) {
-			$this->session->set_flashdata('success', 'Tambah Data Peserta Berhasil');
+			$this->Peserta_model->mailer($this->input->post('email'));
+			$this->session->set_flashdata('success', 'Tambah Data Peserta Berhasil, Silahkan Cek Email Anda');
 			redirect('Peserta/landing');
 		} else {
 			$this->session->set_flashdata('failed', 'Tambah Data Gagal, Silahkan Coba Lagi');
