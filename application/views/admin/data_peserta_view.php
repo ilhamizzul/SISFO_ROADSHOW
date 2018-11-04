@@ -21,7 +21,7 @@
                                         <th>Asal Sekolah</th>
                                         <th>Kelas</th>
                                         <th>Ruang Try Out</th>
-                                        <th>Status Absen</th>
+                                        <!-- <th>Status Absen</th> -->
                                         <th>Opsi</th>
                                     </tr>
                                 </thead>
@@ -40,12 +40,12 @@
                                                     <td>'.$data->asal_sekolah.'</td>
                                                     <td>'.$data->kelas.'</td>
                                                     <td>'.$data->nama_ruang.'</td>
-                                                    <td>'.$data->status_absen.'</td>
+                                                    <!-- <td>'.$data->status_absen.'</td>-->
                                                     <td>
                                                         <a data-toggle="modal" data-target="#modalHapus" onclick="delete_peserta('.$data->id_peserta.')" class="btn btn-danger">Hapus</a>';
-                                                        if ($data->status_absen == 'tidak_hadir') {
-                                                            echo '<a data-toggle="modal" data-target="#modalEditStatus" onclick="update_absen('.$data->id_peserta.')" class="btn btn-default">Absen</a>';
-                                                        };
+                                                        // if ($data->status_absen == 'tidak_hadir') {
+                                                        //     echo '<a data-toggle="modal" data-target="#modalEditStatus" onclick="update_absen('.$data->id_peserta.')" class="btn btn-default">Absen</a>';
+                                                        // };
                                                     echo'</td>
                                                 </tr>
                                             ';

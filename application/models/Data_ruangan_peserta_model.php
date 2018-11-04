@@ -20,6 +20,26 @@ class Data_ruangan_peserta_model extends CI_Model {
                     ->result();
     }
 
+    public function get_data_peserta_by_hadir($id_ruang){
+        return $this->db->select('*')
+                    ->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+                    ->from('tb_peserta')
+                    ->where('id_ruang',$id_ruang)
+                    ->where('status_absen', 'hadir')
+                    ->get()
+                    ->result();
+    }
+
+    public function get_data_peserta_by_non_hadir($id_ruang){
+        return $this->db->select('*')
+                    ->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+                    ->from('tb_peserta')
+                    ->where('id_ruang',$id_ruang)
+                    ->where('status_absen', 'tidak_hadir')
+                    ->get()
+                    ->result();
+    }
+
     public function get_data_peserta_by_id($id_peserta)
     {
         return $this->db->select('*')
@@ -47,6 +67,19 @@ class Data_ruangan_peserta_model extends CI_Model {
             ->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
             ->get()
             ->result();
+    }
+
+    public function update_absen()
+    {
+        
+        $update = $this->input->post('id_peserta');
+        for ($i=0; $i <count($update) ; $i++) { 
+            $data = array('status_absen' => 'hadir' );
+            return $this->db->where('id_peserta', $update[$i])
+                    ->update('tb_peserta', $data);
+        }
+        $this->session->set_flashdata('success', 'horass');
+        redirect('Data_ruangan_peserta/absensi_peserta/'.$this->uri->segment(3),'refresh');
     }
 }
 

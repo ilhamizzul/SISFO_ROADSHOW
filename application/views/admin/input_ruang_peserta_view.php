@@ -5,7 +5,7 @@
             <h3 class="panel-title">Tambah Peserta Ruangan</h3>
         </div>
         <div class="panel-body">
-            <form action="<?php echo base_url();?>Data_ruangan_peserta/edit_ruangan/<?php echo $data_ruang->id_ruang?>" method="post" class="">
+            <form action="<?php echo base_url();?>Data_ruangan_peserta/update_ruangan_peserta/<?php echo $data_ruang->id_ruang?>" method="post" class="">
                 <select name="id_peserta" id="id_peserta" class="form-control">
                     <?php
                     $no = 1;
