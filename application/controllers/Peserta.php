@@ -92,7 +92,7 @@ class Peserta extends CI_Controller {
 		);
 
 		if ($this->Peserta_model->add_data_peserta($data) == TRUE) {
-			$this->Peserta_model->mailer($this->input->post('email'));
+			$this->Peserta_model->mailer($this->input->post('email'), $this->input->post('nama_peserta'), $this->session->userdata('nomor_peserta'));
 			$this->session->set_flashdata('success', 'Tambah Data Peserta Berhasil, Silahkan Cek Email Anda');
 			redirect('Peserta/landing');
 		} else {
