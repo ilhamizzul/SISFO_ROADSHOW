@@ -100,6 +100,11 @@
                             <i class="lnr lnr-list"></i> <span>Data Nomor Peserta</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?php echo base_url() ?>data_dokumen_soal" class="<?php if($this->uri->segment(1)=="data_nomor_peserta"){echo "active";}?>">
+                            <i class="lnr lnr-file-empty"></i> <span>Dokumen Soal</span>
+                        </a>
+                    </li>
                     <?php
                         if ($this->session->userdata('status') == 'super_admin') {
                             echo '

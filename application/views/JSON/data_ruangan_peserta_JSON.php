@@ -14,7 +14,7 @@
 				dataType: 'JSON',
 				data: {'id_peserta' : getVar},
 				success: function(response) {
-					if (!response) {
+					if (response) {
 						location.href = '<?php echo base_url() ?>Data_ruangan_peserta/absensi_peserta/<?php $this->uri->segment(3) ?>';
 						alert('Edit Absensi Berhasil');
 					}

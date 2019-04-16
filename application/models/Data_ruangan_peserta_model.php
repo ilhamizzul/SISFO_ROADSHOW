@@ -71,15 +71,13 @@ class Data_ruangan_peserta_model extends CI_Model {
 
     public function update_absen()
     {
-        
+        $anu;   
         $update = $this->input->post('id_peserta');
         for ($i=0; $i <count($update) ; $i++) { 
             $data = array('status_absen' => 'hadir' );
             return $this->db->where('id_peserta', $update[$i])
                     ->update('tb_peserta', $data);
         }
-        $this->session->set_flashdata('success', 'horass');
-        redirect('Data_ruangan_peserta/absensi_peserta/'.$this->uri->segment(3),'refresh');
     }
 }
 

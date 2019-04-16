@@ -1,4 +1,3 @@
-
 <div class="col-md-6">
     <!-- TABLE HOVER -->
     <div class="panel">

@@ -18,7 +18,8 @@ class Data_admin_model extends CI_Model {
 			'username' => $this->input->post('username'),
 			'password' => $this->input->post('password'), 
 			'sekolah' => $this->input->post('sekolah'),
-			'status' => 'admin'
+			'status' => 'admin',
+			'online_status' => FALSE
 		);
 
 		return $this->db->insert('tb_admin', $data);

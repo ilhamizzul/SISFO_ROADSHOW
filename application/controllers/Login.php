@@ -20,18 +20,26 @@ class Login extends CI_Controller {
 
 	public function login()
 	{
-		if ($this->login_model->auth() == TRUE) {
-			$this->session->set_flashdata('success', 'Selamat Datang '.$this->session->userdata('status'));
-			redirect('Dashboard');
+		// var_dump($this->login_model->check_auth());
+		if ($this->login_model->check_auth()) {
+			if ($this->login_model->auth() == TRUE) {
+				$this->session->set_flashdata('success', 'Selamat Datang '.$this->session->userdata('status'));
+				redirect('Dashboard');
+			} else {
+				$this->session->set_flashdata('failed', 'Login Gagal, Silahkan Coba Lagi');
+				redirect('Login');
+			}
 		} else {
-			$this->session->set_flashdata('failed', 'Login Gagal, Silahkan Coba Lagi');
-			redirect('Login');
+			$this->session->set_flashdata('failed', 'Akun Yang Anda Masukkan Telah Masuk di Device Berbeda');
+			redirect('login');
 		}
+			
 		
 	}
 
 	public function logout()
 	{
+		$this->login_model->logout();
 		$this->session->sess_destroy();
 		redirect('Login');
 	}

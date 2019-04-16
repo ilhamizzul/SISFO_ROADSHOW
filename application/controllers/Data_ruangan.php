@@ -19,13 +19,15 @@ class Data_ruangan extends CI_Controller {
 
 	public function tambah_ruangan()
 	{
-		if ($this->Data_ruangan_model->add_data_ruangan() == TRUE) {
-			$this->session->set_flashdata('success', 'Data ruangan berhasil ditambahkan!');
-			redirect('Data_ruangan');
-		} else {
-			$this->session->set_flashdata('failed', 'Data ruangan gagal ditambah, silahkan hubungi developer');
-			redirect('Data_ruangan');
-		}
+		echo "error";
+		// if ($this->Data_ruangan_model->add_data_ruangan() == TRUE) {
+		// 	// $this->session->set_flashdata('success', 'Data ruangan berhasil ditambahkan!');
+		// 	// redirect('Data_ruangan');
+		// } else {
+		// 	// $this->session->set_flashdata('failed', 'Data ruangan gagal ditambah, silahkan hubungi developer');
+		// 	// redirect('Data_ruangan');
+		// 	echo "error";
+		// }
 		
 	}
 
@@ -45,8 +47,6 @@ class Data_ruangan extends CI_Controller {
 			$this->session->set_flashdata('failed', 'Data Ruangan Gagal Dihapus, Silahkan Hubungi Developer');
 			redirect('Data_ruangan');
 		}
-
-		
 	}
 
 	public function edit_letak_ruangan($id_ruang)
