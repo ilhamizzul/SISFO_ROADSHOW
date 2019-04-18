@@ -151,7 +151,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" required name="kelas" placeholder="Kelas">
                                 </div>
-                                <input type="hidden" name="ruang_ujian" value="3">
+                                <input type="hidden" name="ruang_ujian" value="1">
                                 <!-- <div class="form-group">
                                     <select class="form-control" name="ruang_ujian">
                                         <?php 

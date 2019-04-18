@@ -9,6 +9,7 @@ class Data_peserta extends CI_Controller {
 		$this->load->model('Data_peserta_model');
 		$this->load->model('Data_ruangan_model');
 		$this->load->model('Data_nomor_peserta_model');
+		$this->load->model('Year_recap_model');
 	}
 
 	public function index()
@@ -35,6 +36,7 @@ class Data_peserta extends CI_Controller {
 	public function tambah_data_peserta()
 	{
 		$idnmr = $this->input->post('id_nmr');
+		$idtahun = $this->Year_recap_model->get_id_by_year(date('Y'));
 		$data = array(
 			'id_nmr' 		=> $idnmr, 
 			'nama_peserta'	=> $this->input->post('nama_peserta'), 
@@ -43,7 +45,8 @@ class Data_peserta extends CI_Controller {
 			'asal_sekolah' 	=> $this->input->post('asal_sekolah'), 
 			'kelas' 		=> $this->input->post('kelas'), 
 			'id_ruang' 		=> $this->input->post('ruang_ujian'), 
-			'status_absen' 	=> 'tidak_hadir' 
+			'status_absen' 	=> 'tidak_hadir', 
+			'id_tahun'		=> $idtahun->id
 		);
 
 		$data2 = array(

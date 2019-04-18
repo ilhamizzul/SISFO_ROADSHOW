@@ -98,9 +98,6 @@
                         <div class="panel-body">
                             <form class="form-tambah" method="POST" action="<?php echo base_url() ?>Data_dokumen_soal/tambah_dokumen_soal/" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required name="nama_dokumen" placeholder="Nama Dokumen File">
-                                </div>
-                                <div class="form-group">
                                     <select class="form-control" name="tipe_dokumen">
                                         <option><-- Tipe Dokumen Soal --></option>
                                         <option value="soal">Soal</option>

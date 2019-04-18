@@ -41,6 +41,15 @@
 										</p>
 									</div>
 								</div>
+								<div class="col-md-3">
+									<div class="metric">
+										<span class="icon"><i class="fa fa-file"></i></span>
+										<p>
+											<span class="number"><?php echo $count_dokumen ?></span>
+											<span class="title">Dokumen</span>
+										</p>
+									</div>
+								</div>
 							</div>
 							
 						</div>

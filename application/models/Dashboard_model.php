@@ -7,6 +7,10 @@ class Dashboard_model extends CI_Model {
 	{
 		return $this->db->count_all_results('tb_peserta');
 	}	
+	public function count_dokumen()
+	{
+		return $this->db->count_all_results('tb_dokumen_soal');
+	}	
 
 	public function count_peserta_hadir()
 	{

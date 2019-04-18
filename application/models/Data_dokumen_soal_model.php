@@ -26,10 +26,12 @@ class Data_dokumen_soal_model extends CI_Model {
 
 	public function tambah_dokumen($file_dokumen)
 	{
+		date_default_timezone_set('Asia/Jakarta');
 		$data = array(
-			'nama_dokumen_soal' => $this->input->post('nama_dokumen'),
+			'id_dokumen'		=> date('m').date('d').date('h').date('i').date('s'),
+			'nama_dokumen_soal' => $this->input->post('tipe_dokumen').' '.$this->input->post('tipe_soal').' tahun '.$this->input->post('tahun_dokumen_soal'),
 			'tipe_dokumen_soal' => $this->input->post('tipe_dokumen'),
-			'tipe_soal' => $this->input->post('tipe_soal'), 
+			'tipe_soal' => $this->input->post('tipe_soal'),
 			'tahun_dokumen_soal' => $this->input->post('tahun_dokumen_soal'),
 			'file_soal' => $file_dokumen['file_name']
 		);

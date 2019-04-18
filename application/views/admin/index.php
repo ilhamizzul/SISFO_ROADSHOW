@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/linearicons/style.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/chartist/css/chartist-custom.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/morris.css">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
@@ -101,7 +101,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url() ?>data_dokumen_soal" class="<?php if($this->uri->segment(1)=="data_nomor_peserta"){echo "active";}?>">
+                        <a href="<?php echo base_url() ?>data_dokumen_soal" class="<?php if($this->uri->segment(1)=="data_dokumen_soal"){echo "active";}?>">
                             <i class="lnr lnr-file-empty"></i> <span>Dokumen Soal</span>
                         </a>
                     </li>
@@ -113,6 +113,13 @@
                                     if($this->uri->segment(1)=="data_admin"){echo "active";};
                                     echo '">
                                         <i class="lnr lnr-user"></i> <span>Data Admin</span>
+                                    </a>
+                                </li>
+                                <li class="btn-danger btn">
+                                    <a href="'.base_url().'data_admin" class="';
+                                    if($this->uri->segment(1)=="data_admin"){echo "active";};
+                                    echo '">
+                                        <i class="lnr lnr-file-empty"></i> <span>RECAP ALL DATA</span>
                                     </a>
                                 </li>
                             ';
@@ -174,10 +181,9 @@
 <script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/scripts/klorofil-common.js"></script>
-
+<script src="<?php echo base_url(); ?>assets/js/morris.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/raphael-min.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/jquery.dataTables.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>

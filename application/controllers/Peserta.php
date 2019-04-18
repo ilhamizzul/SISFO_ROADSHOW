@@ -7,6 +7,7 @@ class Peserta extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Peserta_model');
+		$this->load->model('Year_recap_model');
 	}
 
 
@@ -80,6 +81,7 @@ class Peserta extends CI_Controller {
     public function save_registrasi()
     {
     	$idnmr = $this->session->userdata('id_nmr');
+    	$idtahun = $this->Year_recap_model->get_id_by_year(date('Y'));
 		$data = array(
 			'id_nmr' 		=> $idnmr, 
 			'nama_peserta'	=> $this->input->post('nama_peserta'), 
@@ -88,7 +90,8 @@ class Peserta extends CI_Controller {
 			'asal_sekolah' 	=> $this->input->post('asal_sekolah'), 
 			'kelas' 		=> $this->input->post('kelas'), 
 			'id_ruang' 		=> '1',
-			'status_absen' 	=> 'tidak_hadir' 
+			'status_absen' 	=> 'tidak_hadir',
+			'id_tahun' 		=> $idtahun->id
 		);
 
 		if ($this->Peserta_model->add_data_peserta($data) == TRUE) {
