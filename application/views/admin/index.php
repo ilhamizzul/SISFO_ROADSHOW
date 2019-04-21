@@ -115,8 +115,8 @@
                                         <i class="lnr lnr-user"></i> <span>Data Admin</span>
                                     </a>
                                 </li>
-                                <li class="btn-danger btn">
-                                    <a href="'.base_url().'data_admin" class="';
+                                <li class="btn-danger btn" type="button" data-toggle="modal" data-target="#modalRecap">
+                                    <a class="';
                                     if($this->uri->segment(1)=="data_admin"){echo "active";};
                                     echo '">
                                         <i class="lnr lnr-file-empty"></i> <span>RECAP ALL DATA</span>
@@ -164,6 +164,32 @@
                         $this->load->view($main_view);
                      ?>
                 <!-- END OVERVIEW -->
+                <div id="modalRecap" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    &times;
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <center>
+                                <h4>
+                                    Apakah Anda Yakin?
+                                </h4>
+                                <h5>
+                                    Setelah anda menyetujui ini, anda tidak bisa menginput data lagi hingga event mendatang.
+                                </h5>
+                                </center>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="<?php echo base_url() ?>Dashboard/recap_all_data" class="btn btn-danger">YA</a>
+                                <a href="" class="btn btn-default" data-dismiss="modal">TIDAK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- END MAIN CONTENT -->
@@ -193,6 +219,16 @@
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/vfs_fonts.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+<script>
+    Morris.Bar({
+      element: 'graph',
+      data: <?php echo $recap_data;?>,
+      xkey: 'tahun',
+      ykeys: ['total_terdaftar', 'total_hadir', 'total_tidak_hadir'],
+      labels: ['total terdaftar', 'total hadir', 'total tidak hadir']
+    });
+</script>
 
 
 

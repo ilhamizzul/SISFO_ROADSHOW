@@ -36,7 +36,7 @@ class Data_peserta extends CI_Controller {
 	public function tambah_data_peserta()
 	{
 		$idnmr = $this->input->post('id_nmr');
-		$idtahun = $this->Year_recap_model->get_id_by_year(date('Y'));
+		$idtahun = $this->Year_recap_model->get_data_by_year(date('Y'));
 		$data = array(
 			'id_nmr' 		=> $idnmr, 
 			'nama_peserta'	=> $this->input->post('nama_peserta'), 
@@ -52,15 +52,22 @@ class Data_peserta extends CI_Controller {
 		$data2 = array(
 			'status' => 'aktif' 
 		);
-
-		if ($this->Data_peserta_model->add_data_peserta($data, $idnmr) == TRUE) {
-			$this->Data_nomor_peserta_model->edit_status_nomor_peserta($data2, $idnmr);
-			$this->session->set_flashdata('success', 'Tambah Data Peserta Berhasil');
-			redirect('Data_peserta');
-		} else {
-			$this->session->set_flashdata('failed', 'Tambah Data Gagal, Silahkan Coba Lagi');
-			redirect('Data_peserta');
+		if ($idtahun->status != '1') { // belum di rekap
+			if ($this->Data_peserta_model->add_data_peserta($data, $idnmr) == TRUE) {
+				$this->Data_nomor_peserta_model->edit_status_nomor_peserta($data2, $idnmr);
+				$this->session->set_flashdata('success', 'Tambah Data Peserta Berhasil');
+				redirect('Data_peserta');
+			} else {
+				$this->session->set_flashdata('failed', 'Tambah Data Gagal, Silahkan Coba Lagi');
+				redirect('Data_peserta');
+			}
+		} else { //sudah di rekap
+			$this->session->set_flashdata('failed', 'Data peserta sudah di rekap dan tidak bisa menambah data lagi hingga event selanjutnya');
+			redirect('data_peserta');
 		}
+		// var_dump($this->Year_recap_model->get_data_by_year(date('Y')));
+		
+			
 		
 	}
 
