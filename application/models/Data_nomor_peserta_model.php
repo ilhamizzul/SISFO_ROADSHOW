@@ -5,9 +5,13 @@ class Data_nomor_peserta_model extends CI_Model {
 
 	public function get_nomor_peserta()
 	{
-		return $this->db->select('*')
+		return $this->db->select('tb_nmrpeserta.id_nmr, nomor_peserta, tb_nmrpeserta.status')
+						->join('tb_peserta', 'tb_peserta.id_nmr = tb_nmrpeserta.id_nmr')
+						->join('tb_total_registration', 'tb_total_registration.id = tb_peserta.id_tahun')
 						->from('tb_nmrpeserta')
-						->where('status', 'aktif')
+						->where('tb_nmrpeserta.status', 'aktif')
+						->where('tahun', date('Y'))
+						->where('tb_total_registration.status', 0)
 						->get()
 						->result();
 	}

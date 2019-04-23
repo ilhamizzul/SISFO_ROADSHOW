@@ -28,28 +28,42 @@
 
                                 <tbody>
                                     <?php 
-                                        $no = 1;
-                                        foreach ($data_peserta as $data) {
+                                        if ($data_peserta != NULL) {
+                                            $no = 1;
+                                            foreach ($data_peserta as $data) {
+                                                echo '
+                                                    <tr>
+                                                        <td>'.$no++.'</td>
+                                                        <td>'.$data->nomor_peserta.'</td>
+                                                        <td>'.$data->nama_peserta.'</td>
+                                                        <td>'.$data->email.'</td>
+                                                        <td>'.$data->no_hp.'</td>
+                                                        <td>'.$data->asal_sekolah.'</td>
+                                                        <td>'.$data->kelas.'</td>
+                                                        <td>'.$data->nama_ruang.'</td>
+                                                        <!-- <td>'.$data->status_absen.'</td>-->
+                                                        <td>
+                                                            <a data-toggle="modal" data-target="#modalHapus" onclick="delete_peserta('.$data->id_peserta.')" class="btn btn-danger">Hapus</a>';
+                                                            // if ($data->status_absen == 'tidak_hadir') {
+                                                            //     echo '<a data-toggle="modal" data-target="#modalEditStatus" onclick="update_absen('.$data->id_peserta.')" class="btn btn-default">Absen</a>';
+                                                            // };
+                                                        echo'</td>
+                                                    </tr>
+                                                ';
+                                            }
+                                        } else {
                                             echo '
                                                 <tr>
-                                                    <td>'.$no++.'</td>
-                                                    <td>'.$data->nomor_peserta.'</td>
-                                                    <td>'.$data->nama_peserta.'</td>
-                                                    <td>'.$data->email.'</td>
-                                                    <td>'.$data->no_hp.'</td>
-                                                    <td>'.$data->asal_sekolah.'</td>
-                                                    <td>'.$data->kelas.'</td>
-                                                    <td>'.$data->nama_ruang.'</td>
-                                                    <!-- <td>'.$data->status_absen.'</td>-->
-                                                    <td>
-                                                        <a data-toggle="modal" data-target="#modalHapus" onclick="delete_peserta('.$data->id_peserta.')" class="btn btn-danger">Hapus</a>';
-                                                        // if ($data->status_absen == 'tidak_hadir') {
-                                                        //     echo '<a data-toggle="modal" data-target="#modalEditStatus" onclick="update_absen('.$data->id_peserta.')" class="btn btn-default">Absen</a>';
-                                                        // };
-                                                    echo'</td>
-                                                </tr>
+                                                    <td colspan="9">
+                                                        <center>
+                                                            <img style="width:25%;height:auto" src="'.base_url().'assets/img/cry.png">
+                                                            <h2>Masih Belum Ada Data Peserta~</h2>
+                                                        </center>
+                                                    </td>
+                                                </tr>  
                                             ';
                                         }
+
                                     ?>
                                                 
 

@@ -33,8 +33,6 @@ class Login extends CI_Controller {
 			$this->session->set_flashdata('failed', 'Akun Yang Anda Masukkan Telah Masuk di Device Berbeda');
 			redirect('login');
 		}
-			
-		
 	}
 
 	public function logout()
