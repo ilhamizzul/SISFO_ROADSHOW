@@ -14,7 +14,10 @@ class Data_ruangan_peserta_model extends CI_Model {
     public function get_data_peserta($id_ruang){
         return $this->db->select('*')
                     ->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+                    ->join('tb_total_registration', 'tb_total_registration.id = tb_peserta.id_tahun')
                     ->from('tb_peserta')
+                    ->where('tahun', date('Y'))
+                    ->where('tb_total_registration.status', 0)
                     ->where('id_ruang',$id_ruang)
                     ->get()
                     ->result();

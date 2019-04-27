@@ -36,13 +36,14 @@
                 <?php
                 $no = 1;
                 foreach ($data_peserta_ruang as $data) {
-                    echo '<tr>
-                    <td>'.$no++.'</td>
-                    <td>'.$data->nama_peserta.'</td>
-                    <td>'.$data->nomor_peserta.'</td>
-                    <td>'.$data->status_absen.'</td>
-                </tr>
-            ';
+                    echo '
+                        <tr>
+                            <td>'.$no++.'</td>
+                            <td>'.$data->nama_peserta.'</td>
+                            <td>'.$data->nomor_peserta.'</td>
+                            <td>'.$data->status_absen.'</td>
+                        </tr>
+                    ';
                 }
 
                 ?>

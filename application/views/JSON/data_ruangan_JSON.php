@@ -5,7 +5,7 @@
 			$('.form-tambah').submit();
 		});
 
-		document.title = 'Data Ruangan | RoadShow2k18';
+		document.title = 'Dashboard | RoadShow' + <?php echo date('Y') ?>;
 
 	});
 

@@ -30,13 +30,20 @@ class Dashboard extends CI_Controller {
 	public function recap_all_data()
 	{
 		if ($this->session->userdata('logged_in') == TRUE) {
-			if ($this->Year_recap_model->data_recap() == TRUE) {
-				$this->session->set_flashdata('success', 'Data Berhasil Di Rekap');
-				redirect('dashboard');
+			$data = $this->Year_recap_model->get_data_by_year(date('Y'));
+			if ($data->status == 0) {
+				if ($this->Year_recap_model->data_recap() == TRUE) {
+					$this->session->set_flashdata('success', 'Data Berhasil Di Rekap');
+					redirect('dashboard');
+				} else {
+					$this->session->set_flashdata('failed', 'Data Gagal Di Rekap, Silahkan Hubungi Admin');
+					redirect('dashboard');
+				}
 			} else {
-				$this->session->set_flashdata('failed', 'Data Gagal Di Rekap, Silahkan Hubungi Admin');
+				$this->session->set_flashdata('failed', 'Data Tahun Ini Telah di Rekap');
 				redirect('dashboard');
 			}
+				
 		} else {
 			redirect('login');
 		}

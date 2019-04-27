@@ -51,18 +51,19 @@
                                                     </tr>
                                                 ';
                                             }
-                                        } else {
-                                            echo '
-                                                <tr>
-                                                    <td colspan="9">
-                                                        <center>
-                                                            <img style="width:25%;height:auto" src="'.base_url().'assets/img/cry.png">
-                                                            <h2>Masih Belum Ada Data Peserta~</h2>
-                                                        </center>
-                                                    </td>
-                                                </tr>  
-                                            ';
-                                        }
+                                        } 
+                                        // else {
+                                        //     echo '
+                                        //         <tr>
+                                        //             <td colspan="9">
+                                        //                 <center>
+                                        //                     <img style="width:25%;height:auto" src="'.base_url().'assets/img/cry.png">
+                                        //                     <h2>Masih Belum Ada Data Peserta~</h2>
+                                        //                 </center>
+                                        //             </td>
+                                        //         </tr>  
+                                        //     ';
+                                        // }
 
                                     ?>
                                                 

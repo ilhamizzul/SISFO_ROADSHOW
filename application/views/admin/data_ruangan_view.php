@@ -33,7 +33,7 @@
                                                 <button type="button" data-toggle="modal" data-target="#modalEditLetak" onclick="edit_ruang('.$data->id_ruang.')" class="btn btn-primary">Edit Letak Ruangan</button>
                                                 <button type="button" data-toggle="modal" data-target="#modalHapus" onclick="delete_ruang('.$data->id_ruang.')" class="btn btn-danger">Hapus</button>';
                                             }else{
-                                                echo '<a href="Data_ruangan_peserta/get_data_by_id/'.$data->id_ruang.'" class="btn btn-default">Daftar Peserta Belum Memiliki Ruangan</a>';
+                                                echo '<a href="Data_ruangan_peserta/data_peserta/'.$data->id_ruang.'" class="btn btn-default">Daftar Peserta Belum Memiliki Ruangan</a>';
                                             }'
                                     </td>
                                 </tr>

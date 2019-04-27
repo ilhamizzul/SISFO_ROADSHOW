@@ -3,7 +3,7 @@
 		$('#add_dokumen_soal').click(function() {
 			$('.form_tambah').submit();
 		});
-		document.title = "Dokumen Soal | RoadShow2k18";
+		document.title = 'Dashboard | RoadShow' + <?php echo date('Y') ?>;
 
 
 	});

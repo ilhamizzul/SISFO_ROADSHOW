@@ -4,7 +4,7 @@
 			$('.form-tambah').submit();
 		});
 
-		document.title = 'Data Peserta | RoadShow2k18';
+		document.title = 'Dashboard | RoadShow' + <?php echo date('Y') ?>;
 	});	
 
 	function delete_peserta(id_peserta) {

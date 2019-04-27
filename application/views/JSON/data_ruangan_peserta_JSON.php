@@ -1,6 +1,6 @@
 <script type="text/javascript">
 	$(function () {
-		document.title = 'Ruangan Peserta | RoadShow2k18';
+		document.title = 'Dashboard | RoadShow' + <?php echo date('Y') ?>;
 
 		$('#edit_data').click(function() {
 			var getVar = [];

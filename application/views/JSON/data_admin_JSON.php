@@ -3,7 +3,7 @@
 		$('#tambah_admin').click(function() {
 			$('.form-tambah').submit();
 		});
-		document.title = 'Data Admin | RoadShow2k18';	
+		document.title = 'Dashboard | RoadShow' + <?php echo date('Y') ?>;	
 	});
 
 	function delete_admin(id_admin) {
