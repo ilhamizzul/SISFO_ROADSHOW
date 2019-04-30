@@ -109,6 +109,13 @@
                         if ($this->session->userdata('status') == 'super_admin') {
                             echo '
                                 <li>
+                                    <a href="'.base_url().'data_sekolah" class="';
+                                    if($this->uri->segment(1)=="data_sekolah"){echo "active";};
+                                    echo '">
+                                        <i class="lnr lnr-graduation-hat"></i> <span>Data Sekolah</span>
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="'.base_url().'data_admin" class="';
                                     if($this->uri->segment(1)=="data_admin"){echo "active";};
                                     echo '">

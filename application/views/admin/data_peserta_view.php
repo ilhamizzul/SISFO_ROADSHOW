@@ -19,7 +19,7 @@
                                         <th>Email</th>
                                         <th>Nomor Hp</th>
                                         <th>Asal Sekolah</th>
-                                        <th>Kelas</th>
+                                        <th>Pilihan Soal</th>
                                         <th>Ruang Try Out</th>
                                         <!-- <th>Status Absen</th> -->
                                         <th>Opsi</th>
@@ -38,8 +38,8 @@
                                                         <td>'.$data->nama_peserta.'</td>
                                                         <td>'.$data->email.'</td>
                                                         <td>'.$data->no_hp.'</td>
-                                                        <td>'.$data->asal_sekolah.'</td>
-                                                        <td>'.$data->kelas.'</td>
+                                                        <td>'.$data->nama_sekolah.'</td>
+                                                        <td>'.$data->pilihan_soal.'</td>
                                                         <td>'.$data->nama_ruang.'</td>
                                                         <!-- <td>'.$data->status_absen.'</td>-->
                                                         <td>
@@ -136,48 +136,29 @@
                                     <input type="email" class="form-control" name="email" placeholder="Email">    
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" maxlength="12" class="form-control" required name="no_hp" placeholder="Nomor HP">
+                                    <input type="number" maxlength="14" class="form-control" required name="no_hp" placeholder="Nomor HP">
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" name="asal_sekolah">
                                         <option><-- Asal Sekolah --></option>
-                                        <option value="SMAN 1 KOTA PROBOLINGGO">SMAN 1 KOTA PROBOLINGGO</option>
-                                        <option value="SMAN 2 KOTA PROBOLINGGO">SMAN 2 KOTA PROBOLINGGO</option>
-                                        <option value="SMAN 3 KOTA PROBOLINGGO">SMAN 3 KOTA PROBOLINGGO</option>
-                                        <option value="SMAN 4 KOTA PROBOLINGGO">SMAN 4 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 1 KOTA PROBOLINGGO">SMKN 1 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 2 KOTA PROBOLINGGO">SMKN 2 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 3 KOTA PROBOLINGGO">SMKN 3 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 4 KOTA PROBOLINGGO">SMKN 4 KOTA PROBOLINGGO</option>
-                                        <option value="MAN 1 KOTA PROBOLINGGO"> MAN 1 KOTA PROBOLINGGO</option>
-                                        <option value="MAN 2 KOTA PROBOLINGGO"> MAN 2 KOTA PROBOLINGGO</option>
-                                        <option value="SMA TARUNA DRA. ZULAEHA">SMA TARUNA DRA. ZULAEHA</option>
-                                        <option value="SMAN 1 DRINGU">SMAN 1 DRINGU</option>
-                                        <option value="SMAN 1 KRAKSAAN">SMAN 1 KRAKSAAN</option>
-                                        <option value="SMA TUNAS LUHUR">SMA TUNAS LUHUR</option>
-                                        <option value="SMAN 1 TONGAS">SMAN 1 TONGAS</option>
-                                        <option value="SMAN 1 LECES">SMAN 1 LECES</option>
-                                        <option value="SMAK MATER DEI">SMAK MATER DEI</option>
-                                        <option value="MAN PAJARAKAN">MAN PAJARAKAN</option>
-                                        <option value="SMAN 1 PAITON">SMAN 1 PAITON</option>
-                                        <option value="SMAN 1 GENDING">SMAN 1 GENDING</option>
-                                    </select>    
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" required name="kelas" placeholder="Kelas">
-                                </div>
-                                <input type="hidden" name="ruang_ujian" value="1">
-                                <!-- <div class="form-group">
-                                    <select class="form-control" name="ruang_ujian">
+                                        
                                         <?php 
-                                            foreach ($data_ruangan as $data) {
+                                            foreach ($data_sekolah as $data) {
                                                 echo '
-                                                    <option value="'.$data->id_ruang.'">'.$data->nama_ruang.'</option>
+                                                    <option value="'.$data->id_sekolah.'">'.$data->nama_sekolah.'</option>
                                                 ';
                                             }
                                         ?>
                                     </select>    
-                                </div> -->
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="pilihan_soal">
+                                        <option><-- Pilihan Soal --></option>
+                                        <option value="teknik">Teknik</option>
+                                        <option value="non_teknik">Non Teknik</option>
+                                    </select>   
+                                </div>
+                                <input type="hidden" name="ruang_ujian" value="1">
                             </form>
                         </div>
                     </div>

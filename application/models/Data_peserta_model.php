@@ -11,6 +11,7 @@ class Data_peserta_model extends CI_Model {
 							->join('tb_total_registration', 'tb_total_registration.id = tb_peserta.id_tahun')
 							->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
 							->join('tb_ruang', 'tb_ruang.id_ruang = tb_peserta.id_ruang')
+							->join('tb_sekolah', 'tb_sekolah.id_sekolah = tb_peserta.id_sekolah')
 							->where('tb_total_registration.status', 0)
 							->get()
 							->result();

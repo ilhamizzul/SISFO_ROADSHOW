@@ -10,6 +10,7 @@ class Data_peserta extends CI_Controller {
 		$this->load->model('Data_ruangan_model');
 		$this->load->model('Data_nomor_peserta_model');
 		$this->load->model('Year_recap_model');
+		$this->load->model('Data_sekolah_model');
 	}
 
 	public function index()
@@ -18,6 +19,7 @@ class Data_peserta extends CI_Controller {
 			$data['main_view'] = 'admin/data_peserta_view';
 			$data['data_ruangan'] = $this->Data_ruangan_model->get_data_ruangan();
 			$data['data_peserta'] = $this->Data_peserta_model->get_data_peserta();
+			$data['data_sekolah'] = $this->Data_sekolah_model->get_data_sekolah();
 			$data['data_nomor_peserta'] = $this->Data_nomor_peserta_model->get_nomor_peserta_non_active();
 			$data['JSON'] = 'JSON/data_peserta_JSON';
 			$this->load->view('admin/index', $data);	
@@ -42,9 +44,9 @@ class Data_peserta extends CI_Controller {
 			'nama_peserta'	=> $this->input->post('nama_peserta'), 
 			'email' 		=> $this->input->post('email'), 
 			'no_hp' 		=> $this->input->post('no_hp'), 
-			'asal_sekolah' 	=> $this->input->post('asal_sekolah'), 
-			'kelas' 		=> $this->input->post('kelas'), 
+			'id_sekolah' 	=> $this->input->post('asal_sekolah'), 
 			'id_ruang' 		=> $this->input->post('ruang_ujian'), 
+			'pilihan_soal'	=> $this->input->post('pilihan_soal'),
 			'status_absen' 	=> 'tidak_hadir', 
 			'id_tahun'		=> $idtahun->id
 		);
