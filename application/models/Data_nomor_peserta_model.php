@@ -56,6 +56,22 @@ class Data_nomor_peserta_model extends CI_Model {
 		}
 	}
 
+	public function ubah_status_nomor_peserta()
+	{
+		$data = array(
+			'status' => 'nonaktif', 
+		);
+
+		$this->db->where('status', 'aktif')->update('tb_nmrpeserta', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+
 }
 
 /* End of file data_nomor_peserta_model.php */

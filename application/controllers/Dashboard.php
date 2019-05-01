@@ -8,6 +8,7 @@ class Dashboard extends CI_Controller {
 		parent::__construct();
 		$this->load->model('dashboard_model');
 		$this->load->model('Year_recap_model');
+		$this->load->model('Data_nomor_peserta_model');
 	}
 
 	public function index()
@@ -30,9 +31,10 @@ class Dashboard extends CI_Controller {
 	public function recap_all_data()
 	{
 		if ($this->session->userdata('logged_in') == TRUE) {
-			$data = $this->Year_recap_model->get_data_by_year(date('Y'));
+			// $data = $this->Year_recap_model->get_data_by_year(date('Y'));
+			$data = $this->Year_recap_model->get_data_by_year(2018);
 			if ($data->status == 0) {
-				if ($this->Year_recap_model->data_recap() == TRUE) {
+				if ($this->Year_recap_model->data_recap() == TRUE && $this->Data_nomor_peserta_model->ubah_status_nomor_peserta() == TRUE) {
 					$this->session->set_flashdata('success', 'Data Berhasil Di Rekap');
 					redirect('dashboard');
 				} else {

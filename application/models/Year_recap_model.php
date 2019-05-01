@@ -23,7 +23,7 @@ class Year_recap_model extends CI_Model {
 
 	public function data_recap()
 	{
-		$data = $this->get_data_by_year(date('Y'));
+		$data = $this->get_data_by_year(2018);
 		$all_peserta = $this->db->where('id_tahun', $data->id)->count_all_results('tb_peserta');
 		$peserta_hadir = $this->db->where('status_absen', 'hadir')
 									->where('id_tahun', $data->id)
@@ -39,7 +39,7 @@ class Year_recap_model extends CI_Model {
 			'status' => 1
 		);
 
-		$this->db->where('tahun', date('Y'))->update('tb_total_registration', $data_recap);
+		$this->db->where('tahun', 2018)->update('tb_total_registration', $data_recap);
 
 		if ($this->db->affected_rows() > 0) {
 			return TRUE;
