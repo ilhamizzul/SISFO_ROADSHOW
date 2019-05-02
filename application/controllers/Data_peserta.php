@@ -38,7 +38,8 @@ class Data_peserta extends CI_Controller {
 	public function tambah_data_peserta()
 	{
 		$idnmr = $this->input->post('id_nmr');
-		$idtahun = $this->Year_recap_model->get_data_by_year(date('Y'));
+		// $idtahun = $this->Year_recap_model->get_data_by_year(date('Y'));
+		$idtahun = $this->Year_recap_model->get_data_by_year(2018);
 		$data = array(
 			'id_nmr' 		=> $idnmr, 
 			'nama_peserta'	=> $this->input->post('nama_peserta'), 

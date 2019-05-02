@@ -140,7 +140,7 @@
                                 </div>
                                 <div class="form-group">
                                     <select class="form-control" name="asal_sekolah">
-                                        <option><-- Asal Sekolah --></option>
+                                        <option value=""><-- Asal Sekolah --></option>
                                         
                                         <?php 
                                             foreach ($data_sekolah as $data) {

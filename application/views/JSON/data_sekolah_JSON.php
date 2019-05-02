@@ -13,4 +13,20 @@
 			$('#nama_sekolah').text(data.nama_sekolah);
 		});
 	}
+
+	Morris.Bar({
+      element: "total_peserta",
+      data: <?php echo $data_count ?>,
+      xkey: "tahun",
+      ykeys: ["total_peserta"],
+      labels: ["total peserta"]
+    });
+
+    Morris.Bar({
+      element: "total_peserta_by_tipe_soal",
+      data: <?php echo $data_count_tipe_soal ?>,
+      xkey: "tahun",
+      ykeys: ["teknik", "non_teknik"],
+      labels: ["Teknik", "Non Teknik"]
+    });
 </script>

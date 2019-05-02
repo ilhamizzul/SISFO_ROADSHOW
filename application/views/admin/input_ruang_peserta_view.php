@@ -11,7 +11,7 @@
                     $no = 1;
                     foreach ($data_peserta as $data) {
                     echo '
-                        <option value="'.$data->id_peserta.'">'.$data->nama_peserta.'   |   <span>     '.$data->asal_sekolah.'</span></option>
+                        <option value="'.$data->id_peserta.'">'.$data->nama_peserta.'   |   <span>     '.$data->nama_sekolah.'</span></option>
                     ';}
                     ?>
                 </select>

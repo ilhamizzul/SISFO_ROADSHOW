@@ -28,7 +28,7 @@
                                                 echo '
                                                     <tr>
                                                         <td>'.$no++.'</td>
-                                                        <td>'.$data->nama_sekolah.'</td>
+                                                        <td><a href="'.base_url().'Data_sekolah/data_per_sekolah/'.$data->id_sekolah.'/'.$data->nama_sekolah.'">'.$data->nama_sekolah.'</a></td>
                                                         <td>'.$data->alamat_sekolah.'</td>
                                                         <td>
                                                             <a data-toggle="modal" data-target="#modalHapus" onclick="delete_sekolah('.$data->id_sekolah.')" class="btn btn-danger">Hapus</a>';
