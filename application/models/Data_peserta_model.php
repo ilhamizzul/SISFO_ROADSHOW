@@ -4,17 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Data_peserta_model extends CI_Model {
 
 	public function get_data_peserta()
-	{
-			
-			return $this->db->select('*')
-							->from('tb_peserta')
-							->join('tb_total_registration', 'tb_total_registration.id = tb_peserta.id_tahun')
-							->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
-							->join('tb_ruang', 'tb_ruang.id_ruang = tb_peserta.id_ruang')
-							->join('tb_sekolah', 'tb_sekolah.id_sekolah = tb_peserta.id_sekolah')
-							->where('tb_total_registration.status', 0)
-							->get()
-							->result();
+	{			
+		return $this->db->select('*')
+						->from('tb_peserta')
+						->join('tb_total_registration', 'tb_total_registration.id = tb_peserta.id_tahun')
+						->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
+						->join('tb_ruang', 'tb_ruang.id_ruang = tb_peserta.id_ruang')
+						->join('tb_sekolah', 'tb_sekolah.id_sekolah = tb_peserta.id_sekolah')
+						->where('tb_total_registration.status', 0)
+						->get()
+						->result();
 	}
 
 	public function get_data_peserta_by_id($id_peserta)

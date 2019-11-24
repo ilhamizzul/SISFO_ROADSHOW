@@ -1,11 +1,11 @@
 <script type="text/javascript">
 	$(function(){
 
-		$('#submit_data_ruangan').click(function() {
+		$('.submit_data_ruangan').click(function() {
 			$('.form-tambah').submit();
 		});
 
-		document.title = 'Dashboard | RoadShow' + <?php echo date('Y') ?>;
+		document.title = 'Data Ruangan | RoadShow' + <?php echo date('Y') ?>;
 
 	});
 

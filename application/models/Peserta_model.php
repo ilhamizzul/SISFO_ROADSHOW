@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Peserta_model extends CI_Model {
 
+	public function get_data_sekolah()
+	{
+		return $this->db->select('id_sekolah, nama_sekolah')
+						->from('tb_sekolah')
+						->get()
+						->result();
+	}
+
 	public function cek_nomor_peserta()
 	{
 		$nomor_peserta = $this->input->post('input_nopes');
@@ -105,6 +113,7 @@ class Peserta_model extends CI_Model {
 		return $this->db->select('*')
                  		  ->join('tb_peserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')
                  		  ->join('tb_ruang', 'tb_ruang.id_ruang = tb_peserta.id_ruang')
+                 		  ->join('tb_sekolah', 'tb_sekolah.id_sekolah = tb_peserta.id_sekolah')
                     	  ->from('tb_nmrpeserta')
                     	  ->where('nomor_peserta',$nomor_peserta)
                     	  ->get()
@@ -177,6 +186,7 @@ class Peserta_model extends CI_Model {
 			'smtp_port' => 465, 
 			'smtp_user' => 'ProTelkomCommunity@gmail.com', 
 			'smtp_pass' => '/*protect2013*/'
+			
 		);
 
 		$this->load->library('email', $config);

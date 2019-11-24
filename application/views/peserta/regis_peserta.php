@@ -67,35 +67,26 @@
                                 <div class="group">
                                     <select class="input-md" id="input-peserta2" name="asal_sekolah" required>
                                         <option disabled selected value>Asal Sekolah</option>
-                                        <option value="SMAN 1 KOTA PROBOLINGGO">SMAN 1 KOTA PROBOLINGGO</option>
-                                        <option value="SMAN 2 KOTA PROBOLINGGO">SMAN 2 KOTA PROBOLINGGO</option>
-                                        <option value="SMAN 3 KOTA PROBOLINGGO">SMAN 3 KOTA PROBOLINGGO</option>
-                                        <option value="SMAN 4 KOTA PROBOLINGGO">SMAN 4 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 1 KOTA PROBOLINGGO">SMKN 1 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 2 KOTA PROBOLINGGO">SMKN 2 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 3 KOTA PROBOLINGGO">SMKN 3 KOTA PROBOLINGGO</option>
-                                        <option value="SMKN 4 KOTA PROBOLINGGO">SMKN 4 KOTA PROBOLINGGO</option>
-                                        <option value="MAN 1 KOTA PROBOLINGGO"> MAN 1 KOTA PROBOLINGGO</option>
-                                        <option value="MAN 2 KOTA PROBOLINGGO"> MAN 2 KOTA PROBOLINGGO</option>
-                                        <option value="SMA TARUNA DRA. ZULAEHA">SMA TARUNA DRA. ZULAEHA</option>
-                                        <option value="SMAN 1 DRINGU">SMAN 1 DRINGU</option>
-                                        <option value="SMAN 1 KRAKSAAN">SMAN 1 KRAKSAAN</option>
-                                        <option value="SMA TUNAS LUHUR">SMA TUNAS LUHUR</option>
-                                        <option value="SMAN 1 TONGAS">SMAN 1 TONGAS</option>
-                                        <option value="SMAN 1 LECES">SMAN 1 LECES</option>
-                                        <option value="SMAK MATER DEI">SMAK MATER DEI</option>
-                                        <option value="MAN PAJARAKAN">MAN PAJARAKAN</option>
-                                        <option value="SMAN 1 PAITON">SMAN 1 PAITON</option>
-                                        <option value="SMAN 1 GENDING">SMAN 1 GENDING</option>
+                                        <?php
+                                            foreach ($data_sekolah as $data) {
+                                                echo '
+                                                    <option value="'.$data->id_sekolah.'">'.$data->nama_sekolah.'</option>
+                                                ';
+                                            }
+                                        ?>
+                                        
                                     </select>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                 </div>
                                 <div class="group">
-                                    <input type="text" class="input-md" id="input-peserta2" name="kelas" required>
+                                    <select class="input-md" id="input-peserta2" name="pilihan_soal" required>
+                                        <option disabled selected value>Tipe Soal</option>
+                                        <option value="teknik">Teknik</option>
+                                        <option value="non_teknik">Non Teknik</option>
+                                    </select>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label>Kelas</label>
                                 </div>
                                 <button type="submit" class="btn btn-submit btn-peserta2" required>
                                     Submit

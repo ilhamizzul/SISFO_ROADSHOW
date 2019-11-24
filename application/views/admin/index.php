@@ -23,9 +23,6 @@
     <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>assets/img/favicon.png">
 
 
-
-
-
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom-admin.css">
 
 
@@ -122,6 +119,13 @@
                                         <i class="lnr lnr-user"></i> <span>Data Admin</span>
                                     </a>
                                 </li>
+                                <li>
+                                    <a href="'.base_url().'data_asset" class="';
+                                    if($this->uri->segment(1)=="data_asset"){echo "active";};
+                                    echo '">
+                                        <i class="lnr lnr-map-marker"></i> <span>Asset Gambar</span>
+                                    </a>
+                                </li>
                                 <li class="btn-danger btn" type="button" data-toggle="modal" data-target="#modalRecap">
                                     <a class="">
                                         <i class="lnr lnr-file-empty"></i> <span>RECAP ALL DATA</span>
@@ -215,6 +219,7 @@
 <script src="<?php echo base_url(); ?>assets/scripts/klorofil-common.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/morris.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/raphael-min.js"></script>
+
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/jquery.dataTables.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
@@ -224,12 +229,7 @@
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/vfs_fonts.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
 <script src="<?php echo base_url();?>assets/js/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-            
-
-
 <script src="<?php echo base_url();?>assets/js/jquery-datatable.js"></script>
-
-
 
 <?php $this->load->view($JSON); ?>
 

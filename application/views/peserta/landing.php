@@ -70,17 +70,17 @@
                                     <label>Nomor HP</label>
                                 </div>
                                 <div class="group">
-                                    <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->asal_sekolah;?>"  disabled>
+                                    <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->nama_sekolah;?>"  disabled>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Asal Sekolah</label>
                                 </div>
-                                <div class="group">
+                                <!-- <div class="group">
                                     <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->kelas;?>"  disabled>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <label>Kelas</label>
-                                </div>
+                                </div> -->
                                 <div class="group">
                                     <input type="text" class="input-md" id="input-peserta2" name="input_nopes" value="<?php echo $data_diri->nama_ruang;?>"  disabled>
                                     <span class="highlight"></span>

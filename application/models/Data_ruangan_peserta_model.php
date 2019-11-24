@@ -63,8 +63,8 @@ class Data_ruangan_peserta_model extends CI_Model {
 
     public function get_data_peserta_all()
     {
-        return $this->db->select('nama_peserta, nama_sekolah')
-            ->order_By('tb_peserta.id_sekolah')
+        return $this->db->select('id_peserta, nama_peserta, nama_sekolah')
+            // ->order_By('tb_peserta.id_sekolah')
             ->from('tb_peserta')
             ->where('id_ruang','1')
             ->join('tb_nmrpeserta', 'tb_nmrpeserta.id_nmr = tb_peserta.id_nmr')

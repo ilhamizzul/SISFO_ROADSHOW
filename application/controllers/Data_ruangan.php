@@ -17,17 +17,35 @@ class Data_ruangan extends CI_Controller {
 		$this->load->view('admin/index', $data);			
 	}
 
+	public function randomize()
+	{
+		$j = 1;
+		$peserta = $this->Data_ruangan_model->count_peserta_no_room();
+		$count_room = $this->Data_ruangan_model->get_id_ruangan();
+		$div_peserta = count($peserta) % count($count_room);
+		for ($i=0; $i < count($peserta) ; $i++) { 
+			$this->Data_ruangan_model->edit_ruangan_peserta($peserta[$i]->id_peserta, $count_room[$j]->id_ruang);
+			
+			if ($j < count($count_room)-1) {
+				$j++;
+			} else {
+				$j = 1;
+			}
+			
+		}
+		$this->session->set_flashdata('success', 'Data Ruangan Peserta Berhasil Diubah');
+		redirect('Data_ruangan');
+	}
+
 	public function tambah_ruangan()
 	{
-		echo "error";
-		// if ($this->Data_ruangan_model->add_data_ruangan() == TRUE) {
-		// 	// $this->session->set_flashdata('success', 'Data ruangan berhasil ditambahkan!');
-		// 	// redirect('Data_ruangan');
-		// } else {
-		// 	// $this->session->set_flashdata('failed', 'Data ruangan gagal ditambah, silahkan hubungi developer');
-		// 	// redirect('Data_ruangan');
-		// 	echo "error";
-		// }
+		if ($this->Data_ruangan_model->add_data_ruangan() == TRUE) {
+			$this->session->set_flashdata('success', 'Data ruangan berhasil ditambahkan!');
+			redirect('Data_ruangan');
+		} else {
+			$this->session->set_flashdata('failed', 'Data ruangan gagal ditambah, silahkan hubungi developer');
+			redirect('Data_ruangan');
+		}
 		
 	}
 

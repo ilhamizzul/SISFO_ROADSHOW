@@ -1,4 +1,3 @@
-
 <div class="col-md-12">
     <!-- TABLE HOVER -->
     <div class="panel">
@@ -98,15 +97,16 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="letak_ruang" placeholder="Letak Ruangan">
                                 </div>
+                                <input type="submit" value="TAMBAH" class="btn btn-default" id="add_dokumen_soal">
                             </form>
                         </div>
                     </div>
                 </center>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
                 <a href="" class="btn btn-danger" data-dismiss="modal">Cancel</a>
-                <input type="button" class="btn btn-default" value="TAMBAH" id="submit_data_ruangan" >
-            </div>
+                <input type="button" class="btn btn-default" value="TAMBAH" id="submit_data_ruangan">
+            </div> -->
         </div>
     </div>
 </div>

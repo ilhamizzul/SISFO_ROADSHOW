@@ -40,7 +40,7 @@
                     <img src="<?php echo base_url();?>assets/img/win.svg" alt="">
                 </div>
                 <div class="col-md-6 panel-peserta">
-                    <h3>Roadshow Protect 2018</h3>
+                    <h3>Roadshow Protect <?php echo date("Y") ?></h3>
                     <div class="panel-body" id="panel-peserta">
                         <form action="<?php echo base_url();?>peserta/cek_nomor_peserta" method="post" class="form-peserta">
                             <div class="group">

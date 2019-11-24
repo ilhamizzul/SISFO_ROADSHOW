@@ -10,6 +10,22 @@ class Data_ruangan_model extends CI_Model {
 						->get()
 						->result();
 	}	
+	public function get_id_ruangan()
+	{
+		return $this->db->select('id_ruang')
+						->from('tb_ruang')
+						->get()
+						->result();
+	}
+	public function count_peserta_no_room()
+	{
+		// return $this->db->
+		return $this->db->select('id_peserta')
+						->where('id_ruang', 1)
+						->from('tb_peserta')
+						->get()
+						->result();
+	}
 
 	public function add_data_ruangan()
 	{
@@ -18,7 +34,7 @@ class Data_ruangan_model extends CI_Model {
 			'letak_ruang' =>  $this->input->post('letak_ruang')
 		);
 
-		return $this->db->insert('tb_ruang', $data);
+		$this->db->insert('tb_ruang', $data);
 
 		if ($this->db->affected_rows() > 0) {
 			return TRUE;
@@ -44,7 +60,12 @@ class Data_ruangan_model extends CI_Model {
 			return FALSE;
 		}
 	}
-
+	public function edit_ruangan_peserta($id_peserta, $id_ruangan)
+	{
+		$data = array('id_ruang' => $id_ruangan);
+		$this->db->where('id_peserta', $id_peserta)
+				->update('tb_peserta', $data);
+	}
 	public function edit_letak_ruangan($id_ruang)
 	{
 		$data = array(

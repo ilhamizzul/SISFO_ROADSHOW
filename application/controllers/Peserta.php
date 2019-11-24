@@ -63,8 +63,10 @@ class Peserta extends CI_Controller {
     public function registrasi()
     {
     	if ($this->session->userdata('logged_in_peserta') == TRUE) {
+
     		if ($this->Peserta_model->cek_data_diri() == FALSE) {
     			if ($this->Peserta_model->cek_status_aktivasi() == TRUE){
+    				$data['data_sekolah'] = $this->Peserta_model->get_data_sekolah();
     				$data['JSON'] = 'JSON/data_admin_JSON';
         			$this->load->view('peserta/regis_peserta', $data);	
     			}else{
@@ -81,15 +83,15 @@ class Peserta extends CI_Controller {
     public function save_registrasi()
     {
     	$idnmr = $this->session->userdata('id_nmr');
-    	$idtahun = $this->Year_recap_model->get_id_by_year(date('Y'));
+    	$idtahun = $this->Year_recap_model->get_data_by_year(date('Y'));
 		$data = array(
 			'id_nmr' 		=> $idnmr, 
 			'nama_peserta'	=> $this->input->post('nama_peserta'), 
 			'email' 		=> $this->input->post('email'), 
 			'no_hp' 		=> $this->input->post('no_hp'), 
-			'asal_sekolah' 	=> $this->input->post('asal_sekolah'), 
-			'kelas' 		=> $this->input->post('kelas'), 
+			'id_sekolah' 	=> $this->input->post('asal_sekolah'), 
 			'id_ruang' 		=> '1',
+			'pilihan_soal'	=> $this->input->post('pilihan_soal'),
 			'status_absen' 	=> 'tidak_hadir',
 			'id_tahun' 		=> $idtahun->id
 		);
