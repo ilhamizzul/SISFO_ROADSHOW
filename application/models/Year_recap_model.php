@@ -39,19 +39,10 @@ class Year_recap_model extends CI_Model {
 			'status' => 1
 		);
 
-		$changestatus = array(
-			'status' => 'nonaktif'
-		);
-
 		$this->db->where('tahun', 2018)->update('tb_total_registration', $data_recap);
+
 		if ($this->db->affected_rows() > 0) {
-			$this->db->update('tb_nmrpeserta', $changestatus);
-			if ($this->db->affected_rows() > 0) {
-				return TRUE;
-			} else {
-				return FALSE;
-			}
-			
+			return TRUE;
 		} else {
 			return FALSE;
 		}

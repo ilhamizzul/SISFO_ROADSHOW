@@ -6,48 +6,18 @@
         </div>
 
         <div class="panel-body">
-            <div class="col-md-12">
-                <div class="col-md-4">
-                    <div class="panel" style="background-color: #5f27cd">
-                        <div class="panel-body">
-                            <center>
-                                <a href="<?php echo base_url() ?>data_asset/email" style="color: white">
-                                    <span class="fa fa-envelope" style="font-size: 100px;"></span>
-                                    <br>
-                                    Email Asset
-                                </a>
-                            </center>
-                        </div>
-                    </div>
+            <form class="form-tambah" method="POST" action="<?php echo base_url() ?>Data_peserta/tambah_data_peserta/">
+            	<div class="panel">
+					<div class="panel-body">
+						<img src="http://funkyimg.com/i/2MMT7.png" alt="">
+					</div>
+				</div>
+                <div class="form-group">
+                    <input type="text" class="form-control" required name="nama_peserta" placeholder="Nama">
                 </div>
-                <div class="col-md-4">
-                    <div class="panel" style="background-color: #0abde3">
-                        <div class="panel-body">
-                            <center>
-                                <a href="<?php echo base_url() ?>data_asset/email" style="color: white">
-                                    <span class="fa fa-edit" style="font-size: 100px;"></span>
-                                    <br>
-                                    Registration View Asset
-                                </a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel" style="background-color: #10ac84">
-                        <div class="panel-body">
-                            <center>
-                                <a href="<?php echo base_url() ?>data_asset/email" style="color: white">
-                                    <span class="fa fa-desktop" style="font-size: 100px;"></span>
-                                    <br>
-                                    Landing Page Asset
-                                </a>
-                            </center>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                    
+
+                <input type="hidden" name="ruang_ujian" value="1">
+            </form>
         </div>
     </div>
 </div>
