@@ -1,0 +1,106 @@
+$dark-blue:#1F2438;
+$semi-dark-blue:#3E5873;
+$light-blue:#829FA5;
+$light-cream:#D9CBC2;
+
+body{
+  width: 100%;
+  max-height: 100%;
+  /*background:linear-gradient(0deg,rgba(62,88,115,0.5),rgba(62,88,115,0.5)),url("../images/Capture.PNG");*/
+  background-color: $dark-blue;
+  background-position: center;
+  background-size: contain;
+
+  #content {
+    z-index: 0;
+    position: relative;
+  }
+}
+
+
+.title{
+  color: $light-cream;
+  font-family: "Montserrat SemiBold";
+}
+
+#selamat-datang{
+  font-size: 70pt;
+}
+
+.welcome{
+  padding: 5%;
+}
+
+.form{
+  padding: 1%;
+  background-color: transparent;
+  border: solid 3px !important;
+  margin-top: 10%;
+  border-color: $light-cream !important;
+
+  ::placeholder{
+    color: $light-cream;
+  }
+  .input{
+    margin-top: 1rem;
+    font-size: 20px;
+  }
+  select {
+    width: 100%;
+    height: 50px;
+    margin-top: 0px !important;
+    background-color: $dark-blue;
+    border: 3px solid !important;
+    border-color: $light-cream !important;
+    color: $light-cream;
+  }
+  input{
+    color: $light-cream;
+    max-width: 100%;
+    width: 100%;
+    height: 50px;
+    background-color: $dark-blue;
+    border: solid 3px;
+    border-color: $light-cream;
+    padding: 1%;
+  }
+
+  button {
+    background-color: $dark-blue;
+    border: 3px solid !important;
+    border-radius: 0px !important;
+    border-color: $light-cream;
+    width: 30%;
+    height: 50px;
+  }
+}
+
+#body-absen {
+  background-color: $light-cream;
+
+  .absen {
+    h1 {
+      color: $dark-blue !important;
+    }
+
+    form {
+      border-color: $dark-blue !important;
+
+      input {
+        background-color: $light-cream;
+        border-color: $dark-blue;
+        color: $dark-blue !important;
+      }
+
+      button {
+        border-color: $dark-blue;
+        background-color: $light-cream;
+        color: $dark-blue;
+      }
+
+      ::placeholder {
+        color: $dark-blue;
+      }
+    }
+  }
+}

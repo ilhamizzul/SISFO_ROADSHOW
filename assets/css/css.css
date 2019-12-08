@@ -1,0 +1,92 @@
+body {
+  width: 100%;
+  max-height: 100%;
+  /*background:linear-gradient(0deg,rgba(62,88,115,0.5),rgba(62,88,115,0.5)),url("../images/Capture.PNG");*/
+  background-color: #1F2438;
+  background-position: center;
+  background-size: contain;
+}
+body #content {
+  z-index: 0;
+  position: relative;
+}
+
+.title {
+  color: #D9CBC2;
+  font-family: "Montserrat SemiBold";
+}
+
+#selamat-datang {
+  font-size: 70pt;
+}
+
+.welcome {
+  padding: 5%;
+}
+
+.form {
+  padding: 1%;
+  background-color: transparent;
+  border: solid 3px !important;
+  margin-top: 10%;
+  border-color: #D9CBC2 !important;
+}
+.form ::placeholder {
+  color: #D9CBC2;
+}
+.form .input {
+  margin-top: 1rem;
+  font-size: 20px;
+}
+.form select {
+  width: 100%;
+  height: 50px;
+  margin-top: 0px !important;
+  background-color: #1F2438;
+  border: 3px solid !important;
+  border-color: #D9CBC2 !important;
+  color: #D9CBC2;
+}
+.form input {
+  color: #D9CBC2;
+  max-width: 100%;
+  width: 100%;
+  height: 50px;
+  background-color: #1F2438;
+  border: solid 3px;
+  border-color: #D9CBC2;
+  padding: 1%;
+}
+.form button {
+  background-color: #1F2438;
+  border: 3px solid !important;
+  border-radius: 0px !important;
+  border-color: #D9CBC2;
+  width: 30%;
+  height: 50px;
+}
+
+#body-absen {
+  background-color: #D9CBC2;
+}
+#body-absen .absen h1 {
+  color: #1F2438 !important;
+}
+#body-absen .absen form {
+  border-color: #1F2438 !important;
+}
+#body-absen .absen form input {
+  background-color: #D9CBC2;
+  border-color: #1F2438;
+  color: #1F2438 !important;
+}
+#body-absen .absen form button {
+  border-color: #1F2438;
+  background-color: #D9CBC2;
+  color: #1F2438;
+}
+#body-absen .absen form ::placeholder {
+  color: #1F2438;
+}
+
+/*# sourceMappingURL=css.css.map */
