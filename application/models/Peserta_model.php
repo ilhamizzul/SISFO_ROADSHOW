@@ -184,8 +184,10 @@ class Peserta_model extends CI_Model {
 			'protocol' => 'smtp', 
 			'smtp_host' => 'ssl://smtp.googlemail.com', 
 			'smtp_port' => 465, 
-			'smtp_user' => 'ProTelkomCommunity@gmail.com', 
-			'smtp_pass' => '/*protect2013*/'
+			// 'smtp_user' => 'ProTelkomCommunity@gmail.com', 
+			// 'smtp_pass' => '/*protect2013*/'
+			'smtp_user' => 'protectprobolinggocommunity@gmail.com', 
+			'smtp_pass' => 'protectprobolinggo'
 			
 		);
 
